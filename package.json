@@ -14,7 +14,7 @@
     "homepage": "https://github.com/magic-akari/swc-ast-viewer#readme",
     "scripts": {
         "dev": "vite",
-        "build:wasm": "cargo build --target wasm32-wasi --release",
+        "build:wasm": "wasm-pack build --target=web crates/swc_ast_viewer --release",
         "build": "vite build",
         "lint": "oxlint src",
         "preview": "vite preview"
