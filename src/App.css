@@ -1,0 +1,31 @@
+html,
+body,
+#root {
+	height: 100%;
+}
+
+:root {
+	--separator-border: #d0d7de;
+}
+
+.divider {
+	width: var(--vscode-sash-size);
+	height: 100%;
+	position: relative;
+}
+
+.divider:hover {
+	background: var(--vscode-sash-hoverBorder, #0969da);
+}
+
+.divider::after {
+	content: " ";
+	position: absolute;
+	right: 0;
+	left: 0;
+	z-index: 5;
+	height: 100%;
+	width: 1px;
+	pointer-events: none;
+	background-color: var(--separator-border);
+}
