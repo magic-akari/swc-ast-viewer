@@ -1,0 +1,39 @@
+{
+    "name": "swc-ast-viewer",
+    "private": true,
+    "version": "0.0.0",
+    "description": "AST Viewer for swc",
+    "repository": "https://github.com/magic-akari/swc-ast-viewer.git",
+    "author": "magic-akari <akari.ccino@gmail.com>",
+    "license": "MIT",
+    "keywords": [
+        "swc"
+    ],
+    "type": "module",
+    "bugs": "https://github.com/magic-akari/swc-ast-viewer/issues",
+    "homepage": "https://github.com/magic-akari/swc-ast-viewer#readme",
+    "scripts": {
+        "dev": "vite",
+        "build:wasm": "cargo build --target wasm32-wasi --release",
+        "build": "vite build",
+        "lint": "oxlint src",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@monaco-editor/react": "^4.5.2",
+        "react": "18.3.0-canary-41f0e9dae-20230907",
+        "react-dom": "18.3.0-canary-41f0e9dae-20230907",
+        "react-resizable-panels": "^0.0.55"
+    },
+    "devDependencies": {
+        "@swc/core": "^1.3.83",
+        "@types/react": "^18.2.15",
+        "@types/react-dom": "^18.2.7",
+        "monaco-editor": "^0.41.0",
+        "oxlint": "^0.0.12",
+        "rollup-plugin-swc3": "^0.10.1",
+        "typescript": "^5.0.2",
+        "vite": "^4.4.5",
+        "vite-plugin-external-globals": "^0.3.2"
+    }
+}
