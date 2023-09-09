@@ -12,6 +12,9 @@ echo "Installing Bun..."
 # Install Bun
 curl -fsSL https://bun.sh/install | bash
 
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
+
 echo "Installing dependencies..."
 # Install dependencies
 bun install
