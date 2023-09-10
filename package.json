@@ -15,7 +15,7 @@
     "scripts": {
         "dev": "vite",
         "build:wasm": "wasm-pack build --target=web crates/swc_ast_viewer --release",
-        "build": "vite build",
+        "build": "tsc && vite build",
         "lint": "oxlint src",
         "preview": "vite preview"
     },
