@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "@monaco-editor/react": "^4.5.2",
+        "@vscode/webview-ui-toolkit": "^1.2.2",
         "react": "18.3.0-canary-41f0e9dae-20230907",
         "react-dom": "18.3.0-canary-41f0e9dae-20230907",
         "react-resizable-panels": "^0.0.55"

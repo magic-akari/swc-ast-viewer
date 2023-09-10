@@ -1,8 +1,9 @@
+import { VSCodeProgressRing } from "@vscode/webview-ui-toolkit/react";
+import { Suspense, useCallback, useState } from "react";
 import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
 import "./App.css";
 import { Input } from "./Input";
 import { Output } from "./Output";
-import { Suspense, useCallback, useState } from "react";
 
 export const App = () => {
 	const [code, setCode] = useState("");
@@ -20,7 +21,7 @@ export const App = () => {
 			</Panel>
 			<PanelResizeHandle className="divider" />
 			<Panel>
-				<Suspense fallback={"loading"}>
+				<Suspense fallback={<VSCodeProgressRing />}>
 					<Output code={code} />
 				</Suspense>
 			</Panel>
