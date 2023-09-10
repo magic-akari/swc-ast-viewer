@@ -124,3 +124,8 @@ pub fn ast(input: &str, file_type: Option<File>) -> Result<String, String> {
 
     Ok(format!("{ast:#?}"))
 }
+
+#[wasm_bindgen]
+pub fn version() -> String {
+    env!("CARGO_PKG_VERSION").into()
+}

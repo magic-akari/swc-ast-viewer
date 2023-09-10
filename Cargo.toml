@@ -1,25 +1,25 @@
 [workspace]
-members = ["crates/*"]
+members  = ["crates/*"]
 resolver = "2"
 
 
-[workspace.package]
-authors = ["magic-akari <akari.ccino@gmail.com>"]
-description = "SWC AST Viewer"
-edition = "2021"
-homepage = "https://github.com/magic-akari/swc-ast-viewer"
-keywords = []
-license = "MIT"
-readme = "README.md"
-repository = "https://github.com/magic-akari/swc-ast-viewer"
-version = "0.0.0"
+    [workspace.package]
+    authors     = ["magic-akari <akari.ccino@gmail.com>"]
+    description = "SWC AST Viewer"
+    edition     = "2021"
+    homepage    = "https://github.com/magic-akari/swc-ast-viewer"
+    keywords    = []
+    license     = "MIT"
+    readme      = "README.md"
+    repository  = "https://github.com/magic-akari/swc-ast-viewer"
+    version     = "0.0.0"
 
 
-[workspace.dependencies]
-swc_core = { version = "0.83.2", default-features = false }
-swc_error_reporters = "0.16.1"
+    [workspace.dependencies]
+    swc_core            = { version = "0.83.2", default-features = false }
+    swc_error_reporters = "0.16.1"
 
 
 [profile.release]
-lto = true
+lto       = true
 opt-level = "s"
