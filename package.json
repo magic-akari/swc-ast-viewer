@@ -36,5 +36,10 @@
         "typescript": "^5.0.2",
         "vite": "^4.4.5",
         "vite-plugin-external-globals": "^0.3.2"
+    },
+    "pnpm": {
+        "patchedDependencies": {
+            "@monaco-editor/react@4.5.2": "patches/@monaco-editor__react@4.5.2.patch"
+        }
     }
 }

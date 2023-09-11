@@ -8,5 +8,12 @@ type IProps = {
 export const Input: React.FC<IProps> = (props) => {
 	const { onChange } = props;
 
-	return <Editor loading={<VSCodeProgressRing />} onChange={onChange} />;
+	return (
+		<Editor
+			path="app.tsx"
+			language="typescript"
+			loading={<VSCodeProgressRing />}
+			onChange={onChange}
+		/>
+	);
 };
