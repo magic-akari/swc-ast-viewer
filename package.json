@@ -36,7 +36,8 @@
         "rollup-plugin-swc3": "^0.10.1",
         "typescript": "^5.0.2",
         "vite": "^4.4.5",
-        "vite-plugin-external-globals": "^0.3.2"
+        "vite-plugin-external-globals": "^0.3.2",
+        "vite-plugin-inspect": "^0.7.38"
     },
     "pnpm": {
         "patchedDependencies": {
