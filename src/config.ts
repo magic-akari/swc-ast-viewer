@@ -1,7 +1,8 @@
 import { loader } from "@monaco-editor/react";
 import { editor, languages } from "monaco-editor";
-import github_light from "./themes/github_light.json" assert { type: "json" };
+import monarch from "./monarch";
 import github_dark from "./themes/github_dark.json" assert { type: "json" };
+import github_light from "./themes/github_light.json" assert { type: "json" };
 
 loader.init().then((monaco) => {
 	monaco.languages.register({ id: "swc-ast" });
@@ -118,6 +119,8 @@ loader.init().then((monaco) => {
 			};
 		},
 	});
+
+	monaco.languages.setMonarchTokensProvider("swc-ast", monarch);
 
 	monaco.editor.defineTheme(
 		"github-light",
