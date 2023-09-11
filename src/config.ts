@@ -138,4 +138,10 @@ loader.init().then((monaco) => {
 		jsx: monaco.languages.typescript.JsxEmit.Preserve,
 		lib: ["esnext", "dom", "dom.iterable"],
 	});
+
+	monaco.editor.addKeybindingRule({
+		keybinding:
+			monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.KeyP,
+		command: "editor.action.quickCommand",
+	});
 });
