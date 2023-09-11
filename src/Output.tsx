@@ -4,7 +4,7 @@ import init, {
 	version,
 } from "crates/swc_ast_viewer/pkg/swc_ast_viewer.js";
 import wasm_url from "crates/swc_ast_viewer/pkg/swc_ast_viewer_bg.wasm?url";
-import { languages } from "monaco-editor";
+import { type editor, languages } from "monaco-editor";
 import { use } from "react";
 
 const wasm_init = init(wasm_url);
@@ -24,6 +24,7 @@ export const Output: React.FC<IProps> = (props) => {
 	return (
 		<Editor
 			beforeMount={beforeMount}
+			onMount={onMount}
 			language={language}
 			value={value}
 			options={{ readOnly: true }}
@@ -108,6 +109,68 @@ function beforeMount(monaco: Monaco) {
 			}
 
 			return result;
+		},
+	});
+
+	monaco.languages.registerCodeLensProvider("swc-ast", {
+		provideCodeLenses() {
+			return {
+				lenses: [
+					{
+						range: {
+							startLineNumber: 1,
+							startColumn: 1,
+							endLineNumber: 2,
+							endColumn: 1,
+						},
+						id: "swc.fold_span_code_lens",
+						command: {
+							id: "editor.foldAllBlockComments",
+							title: "Fold Span",
+						},
+					},
+					{
+						range: {
+							startLineNumber: 1,
+							startColumn: 2,
+							endLineNumber: 2,
+							endColumn: 1,
+						},
+						id: "swc.unfold_span_code_lens",
+						command: {
+							id: "editor.unfoldAll",
+							title: "Unfold Span",
+						},
+					},
+				],
+				dispose() {},
+			};
+		},
+	});
+}
+
+function onMount(editor: editor.IStandaloneCodeEditor, monaco: Monaco) {
+	console.log("onMount");
+
+	editor.addAction({
+		id: "swc.fold_span",
+		label: "Fold Span",
+		keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.BracketLeft],
+		contextMenuGroupId: "navigation",
+		contextMenuOrder: 1,
+		run(editor) {
+			editor.trigger("swc.fold_span", "editor.foldAllBlockComments", {});
+		},
+	});
+
+	editor.addAction({
+		id: "swc.unfold_span",
+		label: "Unfold Span",
+		keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.BracketRight],
+		contextMenuGroupId: "navigation",
+		contextMenuOrder: 2,
+		run(editor) {
+			editor.trigger("swc.unfold_span", "editor.unfoldAll", {});
 		},
 	});
 }
