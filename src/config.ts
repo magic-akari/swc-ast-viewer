@@ -15,7 +15,7 @@ loader.init().then((monaco) => {
 		],
 		comments: {
 			blockComment: ["span: Span {", "},"],
-		}
+		},
 	});
 
 	monaco.languages.registerCodeLensProvider("swc-ast", {
@@ -69,8 +69,12 @@ loader.init().then((monaco) => {
 
 	monaco.languages.typescript.typescriptDefaults.setCompilerOptions({
 		target: monaco.languages.typescript.ScriptTarget.ESNext,
+		module: monaco.languages.typescript.ModuleKind.ESNext,
 		jsx: monaco.languages.typescript.JsxEmit.Preserve,
-		lib: ["esnext", "dom", "dom.iterable"],
+	});
+
+	monaco.languages.typescript.typescriptDefaults.setDiagnosticsOptions({
+		diagnosticCodesToIgnore: [2792],
 	});
 
 	monaco.editor.addKeybindingRule({
