@@ -7,7 +7,7 @@ use swc_core::{
     ecma::{
         ast::*,
         parser::{
-            error::Error as SWCError, parse_file_as_module, EsConfig, PResult, Syntax, TsConfig,
+            error::Error as SWCError, parse_file_as_program, EsConfig, PResult, Syntax, TsConfig,
         },
         transforms::base::resolver,
         visit::VisitMutWith,
@@ -17,7 +17,7 @@ use swc_error_reporters::handler::try_with_handler;
 use wasm_bindgen::prelude::wasm_bindgen;
 
 fn typescript(fm: &SourceFile, errors: &mut Vec<SWCError>, tsx: bool) -> PResult<Program> {
-    parse_file_as_module(
+    parse_file_as_program(
         &fm,
         Syntax::Typescript(TsConfig {
             tsx,
@@ -28,11 +28,10 @@ fn typescript(fm: &SourceFile, errors: &mut Vec<SWCError>, tsx: bool) -> PResult
         None,
         errors,
     )
-    .map(Program::Module)
 }
 
 fn javascript(fm: &SourceFile, errors: &mut Vec<SWCError>, jsx: bool) -> PResult<Program> {
-    parse_file_as_module(
+    parse_file_as_program(
         &fm,
         Syntax::Es(EsConfig {
             jsx,
@@ -43,7 +42,6 @@ fn javascript(fm: &SourceFile, errors: &mut Vec<SWCError>, jsx: bool) -> PResult
         None,
         errors,
     )
-    .map(Program::Module)
 }
 
 #[derive(Default, PartialEq, Deserialize)]
