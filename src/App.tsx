@@ -5,8 +5,11 @@ import "./App.css";
 import { Input } from "./Input";
 import { Output } from "./Output";
 
-export const App = () => {
-	const [code, setCode] = useState("");
+interface IAppProps {
+	code: string;
+}
+export const App: React.FC<IAppProps> = (props) => {
+	const [code, setCode] = useState(props.code);
 
 	const onChange = useCallback((value?: string) => {
 		if (typeof value !== "undefined") {
@@ -17,7 +20,7 @@ export const App = () => {
 	return (
 		<PanelGroup direction="horizontal">
 			<Panel defaultSize={50} minSize={33} maxSize={66}>
-				<Input onChange={onChange} />
+				<Input defaultValue={props.code} onChange={onChange} />
 			</Panel>
 			<PanelResizeHandle className="divider" />
 			<Panel>
