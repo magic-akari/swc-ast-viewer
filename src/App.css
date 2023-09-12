@@ -2,10 +2,16 @@ html,
 body,
 #root {
 	height: 100%;
+	margin: 0;
+	background-color: var(--background-color);
+}
+
+html.dark {
+	color-scheme: dark;
 }
 
 :root {
-	--separator-border: #d0d7de;
+	--vscode-sash-hoverBorder: #0969da;
 }
 
 .divider {
@@ -14,8 +20,29 @@ body,
 	position: relative;
 }
 
+@media (prefers-color-scheme: light) {
+	.divider {
+		--divider-background: #d0d7de;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	.divider {
+		--divider-background: #30363d;
+	}
+}
+
 .divider:hover {
-	background: var(--vscode-sash-hoverBorder, #0969da);
+	background: var(--vscode-sash-hoverBorder);
+}
+
+.divider::before {
+	content: " ";
+	position: absolute;
+	right: -2px;
+	left: -2px;
+	height: 100%;
+	z-index: 5;
 }
 
 .divider::after {
@@ -27,5 +54,5 @@ body,
 	height: 100%;
 	width: 1px;
 	pointer-events: none;
-	background-color: var(--separator-border);
+	background-color: var(--divider-background);
 }
