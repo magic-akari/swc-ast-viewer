@@ -1,0 +1,20 @@
+diff --git a/libs/lz-string.js b/libs/lz-string.js
+index de663ae434219ccd5fc8fb7917f60199d17c7d39..1100f66bf344544f6bd646241e164213f5945598 100644
+--- a/libs/lz-string.js
++++ b/libs/lz-string.js
+@@ -494,13 +494,5 @@ var LZString = {
+   return LZString;
+ })();
+ 
+-if (typeof define === 'function' && define.amd) {
+-  define(function () { return LZString; });
+-} else if( typeof module !== 'undefined' && module != null ) {
+-  module.exports = LZString
+-} else if( typeof angular !== 'undefined' && angular != null ) {
+-  angular.module('LZString', [])
+-  .factory('LZString', function () {
+-    return LZString;
+-  });
+-}
++
++module.exports = LZString;

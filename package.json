@@ -42,7 +42,8 @@
     },
     "pnpm": {
         "patchedDependencies": {
-            "@monaco-editor/react@4.5.2": "patches/@monaco-editor__react@4.5.2.patch"
+            "@monaco-editor/react@4.5.2": "patches/@monaco-editor__react@4.5.2.patch",
+            "lz-string@1.5.0": "patches/lz-string@1.5.0.patch"
         }
     }
 }
