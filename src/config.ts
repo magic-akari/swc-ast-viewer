@@ -74,7 +74,9 @@ loader.init().then((monaco) => {
 	});
 
 	monaco.languages.typescript.typescriptDefaults.setDiagnosticsOptions({
-		diagnosticCodesToIgnore: [2792],
+		noSemanticValidation: true,
+		noSyntaxValidation: true,
+		noSuggestionDiagnostics: true,
 	});
 
 	monaco.editor.addKeybindingRule({
