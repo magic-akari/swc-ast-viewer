@@ -1,8 +1,5 @@
 import Editor, { Monaco } from "@monaco-editor/react";
-import init, {
-	ast,
-	version,
-} from "crates/swc_ast_viewer/pkg/swc_ast_viewer.js";
+import init, { ast, version } from "crates/swc_ast_viewer/pkg/swc_ast_viewer.js";
 import wasm_url from "crates/swc_ast_viewer/pkg/swc_ast_viewer_bg.wasm?url";
 import type { editor } from "monaco-editor";
 import { use } from "react";

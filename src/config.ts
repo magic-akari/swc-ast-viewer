@@ -1,10 +1,10 @@
 import { loader } from "@monaco-editor/react";
+import biome_init, { format as biome_fmt } from "@wasm-fmt/biome_fmt";
+import wasm_url from "@wasm-fmt/biome_fmt/biome_fmt_bg.wasm?url";
 import type { editor } from "monaco-editor";
 import monarch from "./monarch";
 import github_dark from "./themes/github_dark.json" assert { type: "json" };
 import github_light from "./themes/github_light.json" assert { type: "json" };
-import biome_init, { format as biome_fmt } from "@wasm-fmt/biome_fmt";
-import wasm_url from "@wasm-fmt/biome_fmt/biome_fmt_bg.wasm?url";
 
 biome_init(wasm_url);
 loader.init().then((monaco) => {
@@ -111,8 +111,7 @@ loader.init().then((monaco) => {
 	);
 
 	monaco.editor.addKeybindingRule({
-		keybinding:
-			monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.KeyP,
+		keybinding: monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.KeyP,
 		command: "editor.action.quickCommand",
 	});
 });
