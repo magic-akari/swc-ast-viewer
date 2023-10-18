@@ -22,6 +22,9 @@ dependencies:
   '@vscode/webview-ui-toolkit':
     specifier: ^1.2.2
     version: 1.2.2(react@18.3.0-canary-41f0e9dae-20230907)
+  '@wasm-fmt/biome_fmt':
+    specifier: ^0.1.0
+    version: 0.1.0
   lz-string:
     specifier: ^1.5.0
     version: 1.5.0(patch_hash=qnowa6rydet5lzvuxqtpcmr2nu)
@@ -695,6 +698,10 @@ packages:
       '@microsoft/fast-foundation': 2.49.1
       '@microsoft/fast-react-wrapper': 0.1.48(react@18.3.0-canary-41f0e9dae-20230907)
       react: 18.3.0-canary-41f0e9dae-20230907
+    dev: false
+
+  /@wasm-fmt/biome_fmt@0.1.0:
+    resolution: {integrity: sha512-QXPnwDG+vg+vE1PZLz3pLIwtn12PNls3FsgJg2ZdZnfJ4A4L6wZZFa2++oqyqoLW64eLRL00MJY8cNdbkuN/TA==}
     dev: false
 
   /big-integer@1.6.51:

@@ -3,7 +3,10 @@ import type { editor } from "monaco-editor";
 import monarch from "./monarch";
 import github_dark from "./themes/github_dark.json" assert { type: "json" };
 import github_light from "./themes/github_light.json" assert { type: "json" };
+import biome_init, { format as biome_fmt } from "@wasm-fmt/biome_fmt";
+import wasm_url from "@wasm-fmt/biome_fmt/biome_fmt_bg.wasm?url";
 
+biome_init(wasm_url);
 loader.init().then((monaco) => {
 	monaco.languages.register({ id: "swc-ast" });
 
@@ -78,6 +81,34 @@ loader.init().then((monaco) => {
 		noSyntaxValidation: true,
 		noSuggestionDiagnostics: true,
 	});
+
+	monaco.languages.registerDocumentFormattingEditProvider(
+		["javascript", "javascriptreact", "typescript", "typescriptreact"],
+		{
+			provideDocumentFormattingEdits(model, options) {
+				const text = model.getValue();
+				const indent_style = options.insertSpaces ? "space" : "tab";
+				const indent_width = options.tabSize;
+
+				try {
+					const formatted = biome_fmt(text, model.uri.path, {
+						indent_style,
+						indent_width,
+					});
+
+					return [
+						{
+							range: model.getFullModelRange(),
+							text: formatted,
+						},
+					];
+				} catch (error) {
+					console.error(error);
+					return [];
+				}
+			},
+		},
+	);
 
 	monaco.editor.addKeybindingRule({
 		keybinding:
