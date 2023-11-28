@@ -35,8 +35,8 @@ dependencies:
     specifier: 18.3.0-canary-41f0e9dae-20230907
     version: 18.3.0-canary-41f0e9dae-20230907(react@18.3.0-canary-41f0e9dae-20230907)
   react-resizable-panels:
-    specifier: ^0.0.55
-    version: 0.0.55(react-dom@18.3.0-canary-41f0e9dae-20230907)(react@18.3.0-canary-41f0e9dae-20230907)
+    specifier: ^0.0.63
+    version: 0.0.63(react-dom@18.3.0-canary-41f0e9dae-20230907)(react@18.3.0-canary-41f0e9dae-20230907)
 
 devDependencies:
   '@swc/core':
@@ -1155,8 +1155,8 @@ packages:
       scheduler: 0.24.0-canary-41f0e9dae-20230907
     dev: false
 
-  /react-resizable-panels@0.0.55(react-dom@18.3.0-canary-41f0e9dae-20230907)(react@18.3.0-canary-41f0e9dae-20230907):
-    resolution: {integrity: sha512-J/LTFzUEjJiqwSjVh8gjUXkQDA8MRPjARASfn++d2+KOgA+9UcRYUfE3QBJixer2vkk+ffQ4cq3QzWzzHgqYpQ==}
+  /react-resizable-panels@0.0.63(react-dom@18.3.0-canary-41f0e9dae-20230907)(react@18.3.0-canary-41f0e9dae-20230907):
+    resolution: {integrity: sha512-AfA8b6kouhL4rBvgUGs17uzWVlYPaJIwwTCVeWRxNpUHJlCG1h9RIMlzA1849AZGsaNJO3j/SNdI5SS4GZDE3g==}
     peerDependencies:
       react: ^16.14.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.14.0 || ^17.0.0 || ^18.0.0
