@@ -37,7 +37,7 @@
 		"@types/react-dom": "^18.2.7",
 		"dprint": "^0.43.0",
 		"monaco-editor": "^0.44.0",
-		"oxlint": "^0.0.13",
+		"oxlint": "^0.0.18",
 		"rollup-plugin-swc3": "^0.10.1",
 		"typescript": "^5.0.2",
 		"vite": "^4.4.5",
