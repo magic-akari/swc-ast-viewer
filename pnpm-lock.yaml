@@ -67,8 +67,8 @@ devDependencies:
     specifier: ^4.4.5
     version: 4.4.9
   vite-plugin-external-globals:
-    specifier: ^0.3.2
-    version: 0.3.2(rollup@3.29.1)
+    specifier: ^0.4.0
+    version: 0.4.0(rollup@3.29.1)
   vite-plugin-inspect:
     specifier: ^0.7.38
     version: 0.7.38(rollup@3.29.1)(vite@4.4.9)
@@ -903,13 +903,6 @@ packages:
     dev: false
     patched: true
 
-  /magic-string@0.30.3:
-    resolution: {integrity: sha512-B7xGbll2fG/VjP+SWg4sX3JynwIU0mjoTc6MPpKNuIvftk6u6vqhDnk1R80b8C2GBR6ywqy+1DcKBrevBg+bmw==}
-    engines: {node: '>=12'}
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.4.15
-    dev: true
-
   /magic-string@0.30.5:
     resolution: {integrity: sha512-7xlpfBaQaP/T6Vh8MO/EqXSW5En6INHEvEXQiuff7Gku0PWjU3uf6w/j9o7O+SpB5fOAkrI5HeoNgwjEO0pFsA==}
     engines: {node: '>=12'}
@@ -1059,15 +1052,15 @@ packages:
     resolution: {integrity: sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==}
     dev: true
 
-  /rollup-plugin-external-globals@0.8.0(rollup@3.29.1):
-    resolution: {integrity: sha512-c65c7hPMCE//cLzC4dLVE25XkuHsBqSkZp+/5pvtZ1MFwqgQLRRkIfuCvI3PnI7Yj8HoXqYtdsRN9gYF5a4tVQ==}
+  /rollup-plugin-external-globals@0.9.1(rollup@3.29.1):
+    resolution: {integrity: sha512-A5bxaS1ZxswieycelVGdEjvV2FqA24IGY1ya17ZpshLoncDjyWR508hzUWOtGYIjr1t5PRu/zVRXmu1KBlJxlw==}
     peerDependencies:
-      rollup: ^2.25.0 || ^3.3.0
+      rollup: ^2.25.0 || ^3.3.0 || ^4.1.4
     dependencies:
-      '@rollup/pluginutils': 5.0.4(rollup@3.29.1)
+      '@rollup/pluginutils': 5.1.0(rollup@3.29.1)
       estree-walker: 3.0.3
       is-reference: 3.0.2
-      magic-string: 0.30.3
+      magic-string: 0.30.5
       rollup: 3.29.1
     dev: true
 
@@ -1198,10 +1191,10 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /vite-plugin-external-globals@0.3.2(rollup@3.29.1):
-    resolution: {integrity: sha512-ZtPzjF4k1LW0iMrAkamhfmrMB6PO6Kg/Q1XZOPL5Sb/U4weNEBs+VvFpOBRbg3x9yQ46DNPkezzgyyykn5u+Ow==}
+  /vite-plugin-external-globals@0.4.0(rollup@3.29.1):
+    resolution: {integrity: sha512-fJG4LjQsLlIlf0WB5gNfm/djTj30GGJwH8aVcPP+2cMvwIqOk5HoBnBriIT66XATz2uEQfglV4ieuUL6dZnAJQ==}
     dependencies:
-      rollup-plugin-external-globals: 0.8.0(rollup@3.29.1)
+      rollup-plugin-external-globals: 0.9.1(rollup@3.29.1)
     transitivePeerDependencies:
       - rollup
     dev: true
