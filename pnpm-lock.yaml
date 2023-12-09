@@ -64,14 +64,14 @@ devDependencies:
     specifier: ^5.3.3
     version: 5.3.3
   vite:
-    specifier: ^4.4.5
-    version: 4.4.9
+    specifier: ^4.4.12
+    version: 4.4.12
   vite-plugin-external-globals:
     specifier: ^0.3.2
     version: 0.3.2(rollup@3.29.1)
   vite-plugin-inspect:
     specifier: ^0.7.38
-    version: 0.7.38(rollup@3.29.1)(vite@4.4.9)
+    version: 0.7.38(rollup@3.29.1)(vite@4.4.12)
 
 packages:
 
@@ -1206,7 +1206,7 @@ packages:
       - rollup
     dev: true
 
-  /vite-plugin-inspect@0.7.38(rollup@3.29.1)(vite@4.4.9):
+  /vite-plugin-inspect@0.7.38(rollup@3.29.1)(vite@4.4.12):
     resolution: {integrity: sha512-+p6pJVtBOLGv+RBrcKAFUdx+euizg0bjL35HhPyM0MjtKlqoC5V9xkCmO9Ctc8JrTyXqODbHqiLWJKumu5zJ7g==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -1224,14 +1224,14 @@ packages:
       open: 9.1.0
       picocolors: 1.0.0
       sirv: 2.0.3
-      vite: 4.4.9
+      vite: 4.4.12
     transitivePeerDependencies:
       - rollup
       - supports-color
     dev: true
 
-  /vite@4.4.9:
-    resolution: {integrity: sha512-2mbUn2LlUmNASWwSCNSJ/EG2HuSRTnVNaydp6vMCm5VIqJsjMfbIWtbH2kDuwUVW5mMUKKZvGPX/rqeqVvv1XA==}
+  /vite@4.4.12:
+    resolution: {integrity: sha512-KtPlUbWfxzGVul8Nut8Gw2Qe8sBzWY+8QVc5SL8iRFnpnrcoCaNlzO40c1R6hPmcdTwIPEDkq0Y9+27a5tVbdQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
