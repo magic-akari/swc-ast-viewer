@@ -19,7 +19,7 @@ export const App: React.FC<IAppProps> = (props) => {
 
 	return (
 		<PanelGroup direction="horizontal">
-			<Panel defaultSize={50} minSize={33} maxSize={66}>
+			<Panel defaultSizePercentage={50} minSizePercentage={33} maxSizePercentage={66}>
 				<Input defaultValue={props.code} onChange={onChange} />
 			</Panel>
 			<PanelResizeHandle className="divider" />
