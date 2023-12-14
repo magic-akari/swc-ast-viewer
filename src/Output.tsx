@@ -1,21 +1,11 @@
 import Editor, { Monaco } from "@monaco-editor/react";
-import init, { ast, version } from "crates/swc_ast_viewer/pkg/swc_ast_viewer.js";
-import wasm_url from "crates/swc_ast_viewer/pkg/swc_ast_viewer_bg.wasm?url";
+import { ast } from "crates/swc_ast_viewer/pkg/swc_ast_viewer.js";
 import type { editor } from "monaco-editor";
-import { use } from "react";
-
-const wasm_init = init(wasm_url);
-
-wasm_init.then(() => {
-	console.log("swc version", version());
-});
 
 type IProps = {
 	code: string;
 };
 export const Output: React.FC<IProps> = (props) => {
-	use(wasm_init);
-
 	const [value, language] = getAST(props.code);
 
 	return (

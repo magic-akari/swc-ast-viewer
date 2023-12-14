@@ -1,5 +1,4 @@
 import { Editor, type OnChange } from "@monaco-editor/react";
-import { VSCodeProgressRing } from "@vscode/webview-ui-toolkit/react";
 
 type IProps = {
 	defaultValue: string;
@@ -14,7 +13,6 @@ export const Input: React.FC<IProps> = (props) => {
 			defaultValue={defaultValue}
 			path="app.tsx"
 			language="typescript"
-			loading={<VSCodeProgressRing />}
 			onChange={onChange}
 		/>
 	);

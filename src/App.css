@@ -54,3 +54,8 @@ html.dark {
 	pointer-events: none;
 	background-color: var(--divider-background);
 }
+
+.loading {
+	height: 100%;
+	margin: auto;
+}
