@@ -13,7 +13,6 @@
 html, body, #root {
 	height: 100%;
 	margin: 0;
-	background-color: var(--background-color);
 }
 
 html.dark {
@@ -23,6 +22,10 @@ html.dark {
 :root {
 	--vscode-sash-hoverBorder: #0969da;
 	--divider-background: var(--background-color);
+}
+
+.app-main {
+	background-color: var(--background-color);
 }
 
 .divider {

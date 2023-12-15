@@ -1,4 +1,3 @@
-// import { VSCodeProgressRing } from "@vscode/webview-ui-toolkit/react";
 import { Suspense, useCallback, useState } from "react";
 import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
 import "./App.css";
@@ -23,7 +22,7 @@ export const App: React.FC<IAppProps> = (props) => {
 	return (
 		<Suspense fallback={"Loading..."}>
 			<Init />
-			<PanelGroup direction="horizontal">
+			<PanelGroup direction="horizontal" className="app-main">
 				<Panel defaultSizePercentage={50} minSizePercentage={33} maxSizePercentage={66}>
 					<Input defaultValue={props.code} onChange={onChange} />
 				</Panel>
