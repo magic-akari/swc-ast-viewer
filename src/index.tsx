@@ -1,8 +1,10 @@
 import { decompressFromEncodedURIComponent } from "lz-string";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { App } from "./App.tsx";
-import { localStore } from "./share.ts";
+import { App } from "./App";
+import { localStore } from "./share";
+
+import("./config");
 
 let init_code = "";
 if (location.hash.startsWith("#code/")) {

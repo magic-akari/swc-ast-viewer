@@ -1,5 +1,5 @@
 import init, { version } from "#swc_ast_viewer";
-import wasm_url from "#swc_ast_viewer/swc_ast_viewer_bg.wasm?url";
+import wasm_url from "#swc_ast_viewer/swc_ast_viewer_bg.wasm";
 import { use } from "react";
 
 const wasm_init = init(wasm_url);

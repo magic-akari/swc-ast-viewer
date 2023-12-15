@@ -1,6 +1,6 @@
 import type { Monaco } from "@monaco-editor/react";
 import biome_init, { format as biome_fmt } from "@wasm-fmt/biome_fmt";
-import wasm_url from "@wasm-fmt/biome_fmt/biome_fmt_bg.wasm?url";
+import wasm_url from "@wasm-fmt/biome_fmt/biome_fmt_bg.wasm";
 
 biome_init(wasm_url);
 
