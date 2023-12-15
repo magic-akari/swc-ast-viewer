@@ -23,7 +23,7 @@ export const App: React.FC<IAppProps> = (props) => {
 		<Suspense fallback={"Loading..."}>
 			<Init />
 			<PanelGroup direction="horizontal" className="app-main">
-				<Panel defaultSizePercentage={50} minSizePercentage={33} maxSizePercentage={66}>
+				<Panel defaultSize={50} minSize={33} maxSize={66}>
 					<Input defaultValue={props.code} onChange={onChange} />
 				</Panel>
 				<PanelResizeHandle className="divider" />

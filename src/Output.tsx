@@ -1,5 +1,5 @@
+import { ast } from "#swc_ast_viewer";
 import Editor, { Monaco } from "@monaco-editor/react";
-import { ast } from "crates/swc_ast_viewer/pkg/swc_ast_viewer.js";
 import type { editor } from "monaco-editor";
 
 type IProps = {
