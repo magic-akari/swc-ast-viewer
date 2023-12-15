@@ -21,7 +21,7 @@ dependencies:
     version: 1.4.0(monaco-editor@0.45.0)
   '@monaco-editor/react':
     specifier: ^4.6.0
-    version: 4.6.0(patch_hash=7rehcztlh3wnmwcrogrsf6w34i)(monaco-editor@0.45.0)(react-dom@18.3.0-canary-41f0e9dae-20230907)(react@18.3.0-canary-41f0e9dae-20230907)
+    version: 4.6.0(patch_hash=7rehcztlh3wnmwcrogrsf6w34i)(monaco-editor@0.45.0)(react-dom@18.3.0-canary-41f0e9dae-20230907)(react@18.3.0-next-fecc288b7-20221025)
   '@wasm-fmt/biome_fmt':
     specifier: ^0.1.1
     version: 0.1.1(patch_hash=pkyptynwq5tm3nhcjcu2nzahwe)
@@ -29,14 +29,14 @@ dependencies:
     specifier: ^1.5.0
     version: 1.5.0(patch_hash=qnowa6rydet5lzvuxqtpcmr2nu)
   react:
-    specifier: 18.3.0-canary-41f0e9dae-20230907
-    version: 18.3.0-canary-41f0e9dae-20230907
+    specifier: 18.3.0-next-fecc288b7-20221025
+    version: 18.3.0-next-fecc288b7-20221025
   react-dom:
     specifier: 18.3.0-canary-41f0e9dae-20230907
-    version: 18.3.0-canary-41f0e9dae-20230907(react@18.3.0-canary-41f0e9dae-20230907)
+    version: 18.3.0-canary-41f0e9dae-20230907(react@18.3.0-next-fecc288b7-20221025)
   react-resizable-panels:
     specifier: ^1.0.1
-    version: 1.0.1(react-dom@18.3.0-canary-41f0e9dae-20230907)(react@18.3.0-canary-41f0e9dae-20230907)
+    version: 1.0.1(react-dom@18.3.0-canary-41f0e9dae-20230907)(react@18.3.0-next-fecc288b7-20221025)
 
 devDependencies:
   '@rsbuild/core':
@@ -138,7 +138,7 @@ packages:
       state-local: 1.0.7
     dev: false
 
-  /@monaco-editor/react@4.6.0(patch_hash=7rehcztlh3wnmwcrogrsf6w34i)(monaco-editor@0.45.0)(react-dom@18.3.0-canary-41f0e9dae-20230907)(react@18.3.0-canary-41f0e9dae-20230907):
+  /@monaco-editor/react@4.6.0(patch_hash=7rehcztlh3wnmwcrogrsf6w34i)(monaco-editor@0.45.0)(react-dom@18.3.0-canary-41f0e9dae-20230907)(react@18.3.0-next-fecc288b7-20221025):
     resolution: {integrity: sha512-RFkU9/i7cN2bsq/iTkurMWOEErmYcY6JiQI3Jn+WeR/FGISH8JbHERjpS9oRuSOPvDMJI0Z8nJeKkbOs9sBYQw==}
     peerDependencies:
       monaco-editor: '>= 0.25.0 < 1'
@@ -147,8 +147,8 @@ packages:
     dependencies:
       '@monaco-editor/loader': 1.4.0(monaco-editor@0.45.0)
       monaco-editor: 0.45.0
-      react: 18.3.0-canary-41f0e9dae-20230907
-      react-dom: 18.3.0-canary-41f0e9dae-20230907(react@18.3.0-canary-41f0e9dae-20230907)
+      react: 18.3.0-next-fecc288b7-20221025
+      react-dom: 18.3.0-canary-41f0e9dae-20230907(react@18.3.0-next-fecc288b7-20221025)
     dev: false
     patched: true
 
@@ -718,13 +718,13 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
-  /react-dom@18.3.0-canary-41f0e9dae-20230907(react@18.3.0-canary-41f0e9dae-20230907):
+  /react-dom@18.3.0-canary-41f0e9dae-20230907(react@18.3.0-next-fecc288b7-20221025):
     resolution: {integrity: sha512-Yn+jzKwpT/NkKdenUKhGzhKAEQbm+MB50Ghr8rOGQkLFzCxT9C+JKllPZyqfkrs5MZ7fHbFLmfVt9OlMfKpTgQ==}
     peerDependencies:
       react: 18.3.0-canary-41f0e9dae-20230907
     dependencies:
       loose-envify: 1.4.0
-      react: 18.3.0-canary-41f0e9dae-20230907
+      react: 18.3.0-next-fecc288b7-20221025
       scheduler: 0.24.0-canary-41f0e9dae-20230907
     dev: false
 
@@ -733,18 +733,18 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /react-resizable-panels@1.0.1(react-dom@18.3.0-canary-41f0e9dae-20230907)(react@18.3.0-canary-41f0e9dae-20230907):
+  /react-resizable-panels@1.0.1(react-dom@18.3.0-canary-41f0e9dae-20230907)(react@18.3.0-next-fecc288b7-20221025):
     resolution: {integrity: sha512-bFKrVLO6VCDp9+zXvLybB3Ldd7MF+Q6E+qE6sxlDfVAlIwEWksJ94CD5RNXTN9a0E3YyAZUkhJEw3a9aCgymzA==}
     peerDependencies:
       react: ^16.14.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.14.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      react: 18.3.0-canary-41f0e9dae-20230907
-      react-dom: 18.3.0-canary-41f0e9dae-20230907(react@18.3.0-canary-41f0e9dae-20230907)
+      react: 18.3.0-next-fecc288b7-20221025
+      react-dom: 18.3.0-canary-41f0e9dae-20230907(react@18.3.0-next-fecc288b7-20221025)
     dev: false
 
-  /react@18.3.0-canary-41f0e9dae-20230907:
-    resolution: {integrity: sha512-4F7k5G3ftLC2zbGqRr6KODEj9FBj89oPcTIbrQjoGm8xinPW1s21+NCSC+QUCI1SSLLT8rgSt9fFce4ij4epzw==}
+  /react@18.3.0-next-fecc288b7-20221025:
+    resolution: {integrity: sha512-lKvCNWRO9XPy8q7hLd0ODK/4Oqr54r3Vr49Y7EyNBz/kfsmNT6Vx0F69KRz/eGcbt1XDvtbA7KZd+mh8w3wONQ==}
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0

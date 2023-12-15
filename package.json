@@ -30,7 +30,7 @@
 		"@monaco-editor/react": "^4.6.0",
 		"@wasm-fmt/biome_fmt": "^0.1.1",
 		"lz-string": "^1.5.0",
-		"react": "18.3.0-canary-41f0e9dae-20230907",
+		"react": "18.3.0-next-fecc288b7-20221025",
 		"react-dom": "18.3.0-canary-41f0e9dae-20230907",
 		"react-resizable-panels": "^1.0.1"
 	},
