@@ -15,6 +15,7 @@ export default defineConfig({
 		},
 	},
 	html: {
+		title: "SWC AST Viewer",
 		tags: transformIndexHtml({
 			integrity: true,
 			crossorigin: "anonymous",
