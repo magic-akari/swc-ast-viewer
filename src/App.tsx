@@ -1,10 +1,11 @@
-import { VSCodeProgressRing } from "@vscode/webview-ui-toolkit/react";
+// import { VSCodeProgressRing } from "@vscode/webview-ui-toolkit/react";
 import { Suspense, useCallback, useState } from "react";
 import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
 import "./App.css";
 import { Init } from "./Init";
 import { Input } from "./Input";
 import { Output } from "./Output";
+import { localStore } from "./share";
 
 interface IAppProps {
 	code: string;
@@ -15,11 +16,12 @@ export const App: React.FC<IAppProps> = (props) => {
 	const onChange = useCallback((value?: string) => {
 		if (typeof value !== "undefined") {
 			setCode(value);
+			localStore.code = value;
 		}
 	}, []);
 
 	return (
-		<Suspense fallback={<VSCodeProgressRing className="loading" />}>
+		<Suspense fallback={"Loading..."}>
 			<Init />
 			<PanelGroup direction="horizontal">
 				<Panel defaultSizePercentage={50} minSizePercentage={33} maxSizePercentage={66}>

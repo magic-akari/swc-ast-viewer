@@ -1,114 +1,24 @@
 import { loader } from "@monaco-editor/react";
-import biome_init, { format as biome_fmt } from "@wasm-fmt/biome_fmt";
-import wasm_url from "@wasm-fmt/biome_fmt/biome_fmt_bg.wasm?url";
-import type { editor } from "monaco-editor";
-import monarch from "./monarch";
-import github_dark from "./themes/github_dark.json" assert { type: "json" };
-import github_light from "./themes/github_light.json" assert { type: "json" };
+import { copy_as_markdown, copy_as_url, open_issue } from "./monaco/action";
+import { config_fmt } from "./monaco/fmt";
+import { swc_ast_code_len, swc_ast_config, swc_ast_monarch, swc_ast_register } from "./monaco/swc-ast";
+import { config_theme } from "./monaco/theme";
+import { config_typescript } from "./monaco/typescript";
 
-biome_init(wasm_url);
 loader.init().then((monaco) => {
-	monaco.languages.register({ id: "swc-ast" });
+	config_theme(monaco);
+	config_typescript(monaco);
 
-	monaco.languages.setLanguageConfiguration("swc-ast", {
-		colorizedBracketPairs: [
-			["{", "}"],
-			["[", "]"],
-			["(", ")"],
-		],
-		comments: {
-			blockComment: ["span: Span {", "},"],
-		},
-	});
+	swc_ast_register(monaco);
+	swc_ast_config(monaco);
+	swc_ast_code_len(monaco);
+	swc_ast_monarch(monaco);
 
-	monaco.languages.registerCodeLensProvider("swc-ast", {
-		provideCodeLenses() {
-			return {
-				lenses: [
-					{
-						range: {
-							startLineNumber: 1,
-							startColumn: 1,
-							endLineNumber: 2,
-							endColumn: 1,
-						},
-						id: "swc.fold_span_code_lens",
-						command: {
-							id: "editor.foldAllBlockComments",
-							title: "Fold Span",
-						},
-					},
-					{
-						range: {
-							startLineNumber: 1,
-							startColumn: 2,
-							endLineNumber: 2,
-							endColumn: 1,
-						},
-						id: "swc.unfold_span_code_lens",
-						command: {
-							id: "editor.unfoldAll",
-							title: "Unfold Span",
-						},
-					},
-				],
-				dispose() {},
-			};
-		},
-	});
+	config_fmt(monaco);
 
-	monaco.languages.setMonarchTokensProvider("swc-ast", monarch);
-
-	monaco.editor.defineTheme(
-		"github-light",
-		github_light as editor.IStandaloneThemeData,
-	);
-	monaco.editor.defineTheme(
-		"github-dark",
-		github_dark as editor.IStandaloneThemeData,
-	);
-
-	monaco.editor.setTheme("github-light");
-
-	monaco.languages.typescript.typescriptDefaults.setCompilerOptions({
-		target: monaco.languages.typescript.ScriptTarget.ESNext,
-		module: monaco.languages.typescript.ModuleKind.ESNext,
-		jsx: monaco.languages.typescript.JsxEmit.Preserve,
-	});
-
-	monaco.languages.typescript.typescriptDefaults.setDiagnosticsOptions({
-		noSemanticValidation: true,
-		noSyntaxValidation: true,
-		noSuggestionDiagnostics: true,
-	});
-
-	monaco.languages.registerDocumentFormattingEditProvider(
-		["javascript", "javascriptreact", "typescript", "typescriptreact"],
-		{
-			provideDocumentFormattingEdits(model, options) {
-				const text = model.getValue();
-				const indent_style = options.insertSpaces ? "space" : "tab";
-				const indent_width = options.tabSize;
-
-				try {
-					const formatted = biome_fmt(text, model.uri.path, {
-						indent_style,
-						indent_width,
-					});
-
-					return [
-						{
-							range: model.getFullModelRange(),
-							text: formatted,
-						},
-					];
-				} catch (error) {
-					console.error(error);
-					return [];
-				}
-			},
-		},
-	);
+	copy_as_url(monaco);
+	copy_as_markdown(monaco);
+	open_issue(monaco);
 
 	monaco.editor.addKeybindingRule({
 		keybinding: monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.KeyP,

@@ -8,7 +8,6 @@ wasm_init.then(() => {
 	console.log("swc version", version());
 });
 
-
 export const Init: React.FC = () => {
 	use(wasm_init);
 
