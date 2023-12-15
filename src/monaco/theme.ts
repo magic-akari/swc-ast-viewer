@@ -1,7 +1,7 @@
 import type { Monaco } from "@monaco-editor/react";
 import type { editor } from "monaco-editor";
-import github_dark from "./github_dark.json" assert { type: "json" };
-import github_light from "./github_light.json" assert { type: "json" };
+import github_dark from "./github_dark.json" with { type: "json" };
+import github_light from "./github_light.json" with { type: "json" };
 
 export function config_theme(monaco: Monaco) {
 	monaco.editor.defineTheme(
