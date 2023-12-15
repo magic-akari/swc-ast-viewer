@@ -34,7 +34,7 @@ export function copy_as_markdown(monaco: Monaco) {
 export function open_issue(monaco: Monaco) {
 	monaco.editor.addEditorAction({
 		id: "swc-ast-viewer.open-issue",
-		label: "Open issue in SWC repository",
+		label: "Open Issue in SWC Repository",
 		precondition: "!editorReadonly",
 		contextMenuOrder: 3,
 		contextMenuGroupId: "issue",
