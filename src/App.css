@@ -1,3 +1,15 @@
+@media (prefers-color-scheme: light) {
+	:root {
+		--background-color: #d0d7de;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background-color: #30363d;
+	}
+}
+
 html, body, #root {
 	height: 100%;
 	margin: 0;
@@ -10,6 +22,7 @@ html.dark {
 
 :root {
 	--vscode-sash-hoverBorder: #0969da;
+	--divider-background: var(--background-color);
 }
 
 .divider {
@@ -18,16 +31,8 @@ html.dark {
 	position: relative;
 }
 
-@media (prefers-color-scheme: light) {
-	.divider {
-		--divider-background: #d0d7de;
-	}
-}
-
-@media (prefers-color-scheme: dark) {
-	.divider {
-		--divider-background: #30363d;
-	}
+.divider {
+	background: var(--divider-background);
 }
 
 .divider:hover {
