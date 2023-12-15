@@ -45,3 +45,22 @@ export function open_issue(monaco: Monaco) {
 		},
 	});
 }
+
+export function share(monaco: Monaco) {
+	monaco.editor.addEditorAction({
+		id: "swc-ast-viewer.share",
+		label: "Share",
+		precondition: "!editorReadonly && share_available",
+		contextMenuOrder: 4,
+		contextMenuGroupId: "share",
+		run(editor) {
+			const code = editor.getValue();
+			const url = shareURL(code);
+			navigator.share({
+				title: "SWC AST Viewer",
+				text: code,
+				url,
+			});
+		},
+	});
+}

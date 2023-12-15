@@ -1,4 +1,4 @@
-import { Editor, type OnChange } from "@monaco-editor/react";
+import { Editor, type OnChange, type OnMount } from "@monaco-editor/react";
 
 type IProps = {
 	defaultValue: string;
@@ -14,6 +14,11 @@ export const Input: React.FC<IProps> = (props) => {
 			path="app.tsx"
 			language="typescript"
 			onChange={onChange}
+			onMount={onMount}
 		/>
 	);
+};
+
+const onMount: OnMount = (editor) => {
+	editor.createContextKey("share_available", navigator.share !== undefined);
 };
