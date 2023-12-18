@@ -9,7 +9,7 @@ export default {
 	operators: ["="],
 
 	// we include these common regular expressions
-	symbols: /[=><!~?:&|+\-*\/\^%]+/,
+	symbols: /[=><!~?:&|+\-*/^%]+/,
 	escapes: /\\(?:[abfnrtv\\"']|x[0-9A-Fa-f]{1,4}|u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{8})/,
 	digits: /\d+(_+\d+)*/,
 
@@ -18,7 +18,7 @@ export default {
 		root: [[/[{}]/, "delimiter.bracket"], { include: "common" }],
 
 		common: [
-			[/\#\d+/, "meta.module-reference"],
+			[/#\d+/, "meta.module-reference"],
 			// identifiers and keywords
 			[
 				/[a-z_$][\w$]*/,
@@ -30,7 +30,7 @@ export default {
 				},
 			],
 			[
-				/[A-Z][\w\$]*/,
+				/[A-Z][\w$]*/,
 				{
 					cases: {
 						"@keywords": "keyword",
@@ -43,7 +43,7 @@ export default {
 			{ include: "@whitespace" },
 
 			// delimiters and operators
-			[/[()\[\]]/, "@brackets"],
+			[/[()[\]]/, "@brackets"],
 			[
 				/@symbols/,
 				{

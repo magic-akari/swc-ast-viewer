@@ -19,7 +19,7 @@
 		"build:wasm": "wasm-pack build --target=web crates/swc_ast_viewer --release",
 		"fix:fmt": "dprint fmt",
 		"check:fmt": "dprint check",
-		"lint": "oxlint src"
+		"lint": "oxlint src -D correctness -D pedantic"
 	},
 	"imports": {
 		"#swc_ast_viewer": "./crates/swc_ast_viewer/pkg/swc_ast_viewer.js",

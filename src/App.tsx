@@ -13,7 +13,7 @@ export const App: React.FC<IAppProps> = (props) => {
 	const [code, setCode] = useState(props.code);
 
 	const onChange = useCallback((value?: string) => {
-		if (typeof value !== "undefined") {
+		if (value !== undefined) {
 			setCode(value);
 			localStore.code = value;
 		}
