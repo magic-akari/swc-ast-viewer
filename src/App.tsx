@@ -11,6 +11,7 @@ interface IAppProps {
 }
 export const App: React.FC<IAppProps> = (props) => {
 	const [code, setCode] = useState(props.code);
+	const [selection, setSelection] = useState({ lo: 0, hi: 0 });
 
 	const onChange = useCallback((value?: string) => {
 		if (value !== undefined) {
@@ -24,11 +25,11 @@ export const App: React.FC<IAppProps> = (props) => {
 			<Init />
 			<PanelGroup direction="horizontal" className="app-main">
 				<Panel defaultSize={50} minSize={33} maxSize={66}>
-					<Input defaultValue={props.code} onChange={onChange} />
+					<Input onSelect={setSelection} defaultValue={props.code} onChange={onChange} />
 				</Panel>
 				<PanelResizeHandle className="divider" />
 				<Panel>
-					<Output code={code} />
+					<Output code={code} selection={selection} />
 				</Panel>
 			</PanelGroup>
 		</Suspense>

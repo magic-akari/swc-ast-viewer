@@ -1,0 +1,87 @@
+import type { IRange } from "monaco-editor";
+
+export interface Span {
+	lo: number;
+	hi: number;
+}
+
+interface SPanInStack {
+	span: Span;
+	level: number;
+}
+
+interface Section {
+	level: number;
+	span: Span;
+	range: IRange;
+}
+
+interface Position {
+	lineNumber: number;
+	column: number;
+}
+
+interface PartialSection {
+	type: "start" | "end";
+	level: number;
+	pos: Position;
+}
+
+export function parse_swc_ast(source: string): Section[] {
+	const lines = source.split("\n");
+	const section_stack: PartialSection[] = [];
+	const span_stack: SPanInStack[] = [];
+	const result: Section[] = [];
+
+	for (const [row, line] of lines.entries()) {
+		const text = line.trimStart();
+		const level = line.length - text.length;
+
+		if (text === "span: Span {") {
+			// span: Span {
+			//     lo: BytePos(
+			//         17,
+			//     ),
+			//     hi: BytePos(
+			//         25,
+			//     ),
+			//     ctxt: #2,
+			// },
+			const lo = Number.parseInt(lines[row + 2]);
+			const hi = Number.parseInt(lines[row + 5]);
+			const span: Span = { lo, hi };
+			span_stack.push({ span, level });
+		}
+
+		if (text.at(-1) === "{") {
+			section_stack.push({ type: "start", level, pos: { lineNumber: row + 1, column: level + 1 } });
+		} else if (text[0] === "}") {
+			const top = section_stack.pop();
+			if (!top || top.type !== "start" || level !== top.level) {
+				throw Error("Invalid section");
+			}
+
+			if (top.level !== level) {
+				continue;
+			}
+
+			const span_ref = span_stack.at(-1);
+			if (!span_ref || level >= span_ref.level) {
+				continue;
+			}
+
+			const { span } = span_stack.pop()!;
+
+			const { lineNumber: startLineNumber, column: startColumn } = top.pos;
+			const range = {
+				startLineNumber,
+				startColumn,
+				endLineNumber: row + 1,
+				endColumn: level + 1 + text.length,
+			};
+			result.push({ level, span, range });
+		}
+	}
+
+	return result;
+}
