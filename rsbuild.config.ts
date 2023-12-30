@@ -1,7 +1,8 @@
 import { defineConfig } from "@rsbuild/core";
 import { pluginReact } from "@rsbuild/plugin-react";
-import { libPreset } from "vite-plugin-external-globals";
-import { transformIndexHtml } from "vite-plugin-external-globals/lib/transform_index_html";
+import { presets, tagBuilder } from "gen_dep_tag";
+
+const tag = tagBuilder({ sri: true });
 
 export default defineConfig({
 	plugins: [pluginReact()],
@@ -16,19 +17,14 @@ export default defineConfig({
 	},
 	html: {
 		title: "SWC AST Viewer",
-		tags: transformIndexHtml({
-			integrity: true,
-			crossorigin: "anonymous",
-			entry: [
-				libPreset("react"),
-				libPreset("react-dom"),
-				{
-					name: "@monaco-editor/loader",
-					var: "monaco_loader",
-					path: "lib/umd/monaco-loader.min.js",
-				},
-			],
-		}),
+		tags: [
+			tag(presets.react),
+			tag(presets["react-dom"]),
+			tag({
+				name: "@monaco-editor/loader",
+				entry: "lib/umd/monaco-loader.min.js",
+			}),
+		].map(htmlTag),
 	},
 	tools: {
 		bundlerChain(chain) {
@@ -39,3 +35,15 @@ export default defineConfig({
 		},
 	},
 });
+
+function htmlTag(meta: ReturnType<typeof tag>) {
+	const { url, integrity } = meta;
+	return {
+		tag: "script",
+		attrs: {
+			src: url,
+			integrity,
+			crossorigin: "anonymous",
+		},
+	};
+}
