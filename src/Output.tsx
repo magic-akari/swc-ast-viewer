@@ -1,6 +1,6 @@
 import { ast } from "#swc_ast_viewer";
 import Editor, { type OnMount } from "@monaco-editor/react";
-import { editor } from "monaco-editor";
+import type { editor } from "monaco-editor";
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import { parse_swc_ast, type Span } from "./swc-ast-parser";
 
@@ -67,7 +67,7 @@ export const Output: React.FC<IProps> = (props) => {
 
 		if (section) {
 			ref.current.setSelection(section.range);
-			ref.current.revealRange(section.range, editor.ScrollType.Smooth);
+			ref.current.revealRangeInCenterIfOutsideViewport(section.range);
 		}
 	}, [language, selection, section_list]);
 
