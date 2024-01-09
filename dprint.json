@@ -6,6 +6,8 @@
 		"*.{ts,tsx,js,jsx,cjs,mjs,json,md,css}"
 	],
 	"excludes": [
+		"**/dist",
+		"**/target",
 		"**/node_modules",
 		"**/*-lock.json"
 	],
