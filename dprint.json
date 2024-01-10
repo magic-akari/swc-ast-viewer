@@ -6,6 +6,7 @@
 		"*.{ts,tsx,js,jsx,cjs,mjs,json,md,css}"
 	],
 	"excludes": [
+		"**/crates",
 		"**/dist",
 		"**/target",
 		"**/node_modules",
