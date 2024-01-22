@@ -17,7 +17,7 @@ resolver = "2"
 
     [workspace.dependencies]
     swc_core            = { version = "0.88.1", default-features = false }
-    swc_error_reporters = "0.17.12"
+    swc_error_reporters = "0.17.13"
 
 
 [profile.release]
