@@ -48,7 +48,6 @@
 	},
 	"pnpm": {
 		"patchedDependencies": {
-			"lz-string@1.5.0": "patches/lz-string@1.5.0.patch",
 			"@monaco-editor/react@4.6.0": "patches/@monaco-editor__react@4.6.0.patch"
 		}
 	}
