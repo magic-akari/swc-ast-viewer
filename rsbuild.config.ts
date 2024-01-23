@@ -26,14 +26,6 @@ export default defineConfig({
 			}),
 		].map(htmlTag),
 	},
-	tools: {
-		bundlerChain(chain) {
-			chain.module
-				.rule("wasm-url")
-				.test(/\.wasm$/)
-				.type("asset/resource");
-		},
-	},
 });
 
 function htmlTag(meta: ReturnType<typeof tag>) {
