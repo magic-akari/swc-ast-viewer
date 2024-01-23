@@ -29,7 +29,7 @@
 	"dependencies": {
 		"@monaco-editor/loader": "^1.4.0",
 		"@monaco-editor/react": "^4.6.0",
-		"@wasm-fmt/biome_fmt": "^0.1.1",
+		"@wasm-fmt/biome_fmt": "^0.1.3",
 		"lz-string": "^1.5.0",
 		"react": "18.3.0-canary-41f0e9dae-20230907",
 		"react-dom": "18.3.0-canary-41f0e9dae-20230907",
@@ -49,8 +49,7 @@
 	"pnpm": {
 		"patchedDependencies": {
 			"lz-string@1.5.0": "patches/lz-string@1.5.0.patch",
-			"@monaco-editor/react@4.6.0": "patches/@monaco-editor__react@4.6.0.patch",
-			"@wasm-fmt/biome_fmt@0.1.1": "patches/@wasm-fmt__biome_fmt@0.1.1.patch"
+			"@monaco-editor/react@4.6.0": "patches/@monaco-editor__react@4.6.0.patch"
 		}
 	}
 }
