@@ -26,6 +26,14 @@ export default defineConfig({
 			}),
 		].map(htmlTag),
 	},
+	performance: {
+		preconnect: [
+			"//cdn.jsdelivr.net",
+		],
+		dnsPrefetch: [
+			"//cdn.jsdelivr.net",
+		],
+	},
 });
 
 function htmlTag(meta: ReturnType<typeof tag>) {
