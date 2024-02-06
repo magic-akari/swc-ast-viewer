@@ -26,7 +26,7 @@ swc_core = { workspace = true, features = [
 
 ] }
 swc_error_reporters = { workspace = true }
-wasm-bindgen = "0.2.90"
+wasm-bindgen = "0.2.91"
 
 [lib]
 crate-type = ["cdylib", "rlib"]
