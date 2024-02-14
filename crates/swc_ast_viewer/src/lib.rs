@@ -125,5 +125,5 @@ pub fn ast(input: &str, file_type: Option<File>) -> Result<String, String> {
 
 #[wasm_bindgen]
 pub fn version() -> String {
-    env!("CARGO_PKG_VERSION").into()
+    swc_core::SWC_CORE_VERSION.into()
 }
