@@ -18,7 +18,7 @@ dependencies:
     version: 4.6.0(patch_hash=7rehcztlh3wnmwcrogrsf6w34i)(monaco-editor@0.47.0)(react-dom@18.3.0-canary-41f0e9dae-20230907)(react@18.3.0-canary-41f0e9dae-20230907)
   '@wasm-fmt/biome_fmt':
     specifier: ^0.1.7
-    version: 0.1.7
+    version: 0.1.8
   lz-string:
     specifier: ^1.5.0
     version: 1.5.0
@@ -418,8 +418,8 @@ packages:
     resolution: {integrity: sha512-WZLiwShhwLRmeV6zH+GkbOFT6Z6VklCItrDioxUnv+u4Ll+8vKeFySoFyK/0ctcRpOmwAicELfmys1sDc/Rw+A==}
     dev: true
 
-  /@wasm-fmt/biome_fmt@0.1.7:
-    resolution: {integrity: sha512-sQyAXn9wTTfmJlK5acR2cv6vA3UlKK3f14/BocQDebWKg5KN41OjjpS16HeZDHTwxC/fOytWOffGozJZX6+Dew==}
+  /@wasm-fmt/biome_fmt@0.1.8:
+    resolution: {integrity: sha512-CIhicYJWhKPiSqpGY/wY4rlvjqBLSPNyZ0ffeusy3DLL12YAotQYJxiipKqz+UZSkr9sfQSmLDz2JsExyzgu6A==}
     dev: false
 
   /browserslist@4.23.0:
