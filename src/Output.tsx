@@ -14,35 +14,8 @@ export const Output: React.FC<IProps> = (props) => {
 	const [value, language] = getAST(code);
 	const ref = useRef<editor.IStandaloneCodeEditor>(null!);
 
-	const onMount = useCallback<OnMount>((editor, monaco) => {
+	const onMount = useCallback<OnMount>((editor) => {
 		ref.current = editor;
-
-		const fold = editor.addAction({
-			id: "swc.fold_span",
-			label: "Fold Span",
-			keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.BracketLeft],
-			contextMenuGroupId: "navigation",
-			contextMenuOrder: 1,
-			run(editor) {
-				editor.trigger("swc.fold_span", "editor.foldAllBlockComments", {});
-			},
-		});
-
-		const unfold = editor.addAction({
-			id: "swc.unfold_span",
-			label: "Unfold Span",
-			keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.BracketRight],
-			contextMenuGroupId: "navigation",
-			contextMenuOrder: 2,
-			run(editor) {
-				editor.trigger("swc.unfold_span", "editor.unfoldAll", {});
-			},
-		});
-
-		return () => {
-			fold.dispose();
-			unfold.dispose();
-		};
 	}, []);
 
 	const section_list = useMemo(() => {
