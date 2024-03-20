@@ -37,7 +37,7 @@
 	},
 	"devDependencies": {
 		"@rsbuild/core": "^0.5.0",
-		"@rsbuild/plugin-react": "^0.4.15",
+		"@rsbuild/plugin-react": "^0.5.0",
 		"@types/react": "^18.2.66",
 		"@types/react-dom": "^18.2.22",
 		"dprint": "^0.45.0",
