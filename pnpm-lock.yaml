@@ -35,10 +35,10 @@ dependencies:
 devDependencies:
   '@rsbuild/core':
     specifier: ^0.5.0
-    version: 0.5.1
+    version: 0.5.2
   '@rsbuild/plugin-react':
     specifier: ^0.5.0
-    version: 0.5.1(@rsbuild/core@0.5.1)
+    version: 0.5.1(@rsbuild/core@0.5.2)
   '@types/react':
     specifier: ^18.2.66
     version: 18.2.66
@@ -230,38 +230,48 @@ packages:
     dev: true
     optional: true
 
-  /@rsbuild/core@0.5.1:
-    resolution: {integrity: sha512-xpWRETHgRUmEgmKhK03PloiiYZ455myyGkc0VTionCLUSpdT+jyTtDUW0T+rNvHkgukH20fVvjpwMbQnT19vXw==}
+  /@rsbuild/core@0.5.2:
+    resolution: {integrity: sha512-YFWjUNa/xcVKQ3i9kXhvB4vBu4ZjD4QX4fCYH5MLO7Uh7IQJUMXfEGfqxQDFwCIheATYRjMapq3iiXjvSZKrLw==}
     engines: {node: '>=16.0.0'}
     hasBin: true
     dependencies:
-      '@rsbuild/shared': 0.5.1(@swc/helpers@0.5.3)
+      '@rsbuild/shared': 0.5.2(@swc/helpers@0.5.3)
       '@rspack/core': 0.5.8(@swc/helpers@0.5.3)
       '@swc/helpers': 0.5.3
-      core-js: 3.36.0
+      core-js: 3.36.1
       html-webpack-plugin: /html-rspack-plugin@5.6.2(@rspack/core@0.5.8)
-      postcss: 8.4.35
+      postcss: 8.4.38
     dev: true
 
-  /@rsbuild/plugin-react@0.5.1(@rsbuild/core@0.5.1):
+  /@rsbuild/plugin-react@0.5.1(@rsbuild/core@0.5.2):
     resolution: {integrity: sha512-5GkLJj/Ht+6HUOGMSXK3v3lfe4ldkaPBtKLd11XUrvGkgPrOAYHZvzF6vLSZaM2yJRr0irLTMYYTBrK+D2Iypw==}
     peerDependencies:
       '@rsbuild/core': ^0.5.1
     dependencies:
-      '@rsbuild/core': 0.5.1
-      '@rsbuild/shared': 0.5.1(@swc/helpers@0.5.3)
+      '@rsbuild/core': 0.5.2
+      '@rsbuild/shared': 0.5.1
       '@rspack/plugin-react-refresh': 0.5.8(react-refresh@0.14.0)
       react-refresh: 0.14.0
     transitivePeerDependencies:
       - '@swc/helpers'
     dev: true
 
-  /@rsbuild/shared@0.5.1(@swc/helpers@0.5.3):
+  /@rsbuild/shared@0.5.1:
     resolution: {integrity: sha512-jBa4Cm91s/1KBcDs1MgGqYbaGRtmSjJK9BQeFV1dKvQoxpXViwOO457EBmOb+T28Dy6hNJK/1f9Uza5qQ4/7Tg==}
     dependencies:
       '@rspack/core': 0.5.8(@swc/helpers@0.5.3)
       caniuse-lite: 1.0.30001598
       postcss: 8.4.35
+    transitivePeerDependencies:
+      - '@swc/helpers'
+    dev: true
+
+  /@rsbuild/shared@0.5.2(@swc/helpers@0.5.3):
+    resolution: {integrity: sha512-I3FSd9hygyvVv5IilKpUjMwZz8QJ3EcsX8TT3kQ8OC3dxMTgfPtVjwDpyTRt2yfHcFMpmxsa9Jeadqjriz/B0A==}
+    dependencies:
+      '@rspack/core': 0.5.8(@swc/helpers@0.5.3)
+      caniuse-lite: 1.0.30001599
+      postcss: 8.4.38
     transitivePeerDependencies:
       - '@swc/helpers'
     dev: true
@@ -425,8 +435,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001598
-      electron-to-chromium: 1.4.708
+      caniuse-lite: 1.0.30001599
+      electron-to-chromium: 1.4.713
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.23.0)
     dev: true
@@ -435,8 +445,12 @@ packages:
     resolution: {integrity: sha512-j8mQRDziG94uoBfeFuqsJUNECW37DXpnvhcMJMdlH2u3MRkq1sAI0LJcXP1i/Py0KbSIC4UDj8YHPrTn5YsL+Q==}
     dev: true
 
-  /core-js@3.36.0:
-    resolution: {integrity: sha512-mt7+TUBbTFg5+GngsAxeKBTl5/VS0guFeJacYge9OmHb+m058UwwIm41SE9T4Den7ClatV57B6TYTuJ0CX1MAw==}
+  /caniuse-lite@1.0.30001599:
+    resolution: {integrity: sha512-LRAQHZ4yT1+f9LemSMeqdMpMxZcc4RMWdj4tiFe3G8tNkWK+E58g+/tzotb5cU6TbcVJLr4fySiAW7XmxQvZQA==}
+    dev: true
+
+  /core-js@3.36.1:
+    resolution: {integrity: sha512-BTvUrwxVBezj5SZ3f10ImnX2oRByMxql3EimVqMysepbC9EeMUOpLwdy6Eoili2x6E4kf+ZUB5k/+Jv55alPfA==}
     requiresBuild: true
     dev: true
 
@@ -458,8 +472,8 @@ packages:
       '@dprint/win32-x64': 0.45.0
     dev: true
 
-  /electron-to-chromium@1.4.708:
-    resolution: {integrity: sha512-iWgEEvREL4GTXXHKohhh33+6Y8XkPI5eHihDmm8zUk5Zo7HICEW+wI/j5kJ2tbuNUCXJ/sNXa03ajW635DiJXA==}
+  /electron-to-chromium@1.4.713:
+    resolution: {integrity: sha512-vDarADhwntXiULEdmWd77g2dV6FrNGa8ecAC29MZ4TwPut2fvosD0/5sJd1qWNNe8HcJFAC+F5Lf9jW1NPtWmw==}
     dev: true
 
   /enhanced-resolve@5.12.0:
@@ -573,7 +587,16 @@ packages:
     dependencies:
       nanoid: 3.3.7
       picocolors: 1.0.0
-      source-map-js: 1.0.2
+      source-map-js: 1.2.0
+    dev: true
+
+  /postcss@8.4.38:
+    resolution: {integrity: sha512-Wglpdk03BSfXkHoQa3b/oulrotAkwrlLDRSOb9D0bN86FdRyE9lppSp33aHNPgBa0JKCoB+drFLZkQoRRYae5A==}
+    engines: {node: ^10 || ^12 || >=14}
+    dependencies:
+      nanoid: 3.3.7
+      picocolors: 1.0.0
+      source-map-js: 1.2.0
     dev: true
 
   /react-dom@18.3.0-canary-41f0e9dae-20230907(react@18.3.0-canary-41f0e9dae-20230907):
@@ -614,8 +637,8 @@ packages:
       loose-envify: 1.4.0
     dev: false
 
-  /source-map-js@1.0.2:
-    resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
+  /source-map-js@1.2.0:
+    resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}
     engines: {node: '>=0.10.0'}
     dev: true
 
