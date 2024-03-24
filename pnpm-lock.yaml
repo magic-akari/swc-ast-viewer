@@ -30,7 +30,7 @@ dependencies:
     version: 18.3.0-canary-41f0e9dae-20230907(react@18.3.0-canary-41f0e9dae-20230907)
   react-resizable-panels:
     specifier: ^2.0.13
-    version: 2.0.13(react-dom@18.3.0-canary-41f0e9dae-20230907)(react@18.3.0-canary-41f0e9dae-20230907)
+    version: 2.0.14(react-dom@18.3.0-canary-41f0e9dae-20230907)(react@18.3.0-canary-41f0e9dae-20230907)
 
 devDependencies:
   '@rsbuild/core':
@@ -591,8 +591,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /react-resizable-panels@2.0.13(react-dom@18.3.0-canary-41f0e9dae-20230907)(react@18.3.0-canary-41f0e9dae-20230907):
-    resolution: {integrity: sha512-DZxLv5Pc6rfuqkgQ+2JW3eLPiX3BgAAR38Cd0lXuCVHXEZLrD+3W4Nag5TqCoNgEM/4IUU9L/pLM2toOUOd6UQ==}
+  /react-resizable-panels@2.0.14(react-dom@18.3.0-canary-41f0e9dae-20230907)(react@18.3.0-canary-41f0e9dae-20230907):
+    resolution: {integrity: sha512-LeAYx3FsIdc9KaWdRpQVTL3AnXzuW4U96S8968H5iCpNwXljFWTFXhbyh73Tw3x20u/ZWSCfYED3WFe37ZbvZw==}
     peerDependencies:
       react: ^16.14.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.14.0 || ^17.0.0 || ^18.0.0
