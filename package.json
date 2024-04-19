@@ -25,7 +25,7 @@
 		"#swc_ast_viewer": "./crates/swc_ast_viewer/pkg/swc_ast_viewer.js",
 		"#swc_ast_viewer/*": "./crates/swc_ast_viewer/pkg/*"
 	},
-	"packageManager": "pnpm@8.15.4",
+	"packageManager": "pnpm@9.0.4",
 	"dependencies": {
 		"@monaco-editor/loader": "^1.4.0",
 		"@monaco-editor/react": "^4.6.0",
@@ -33,18 +33,18 @@
 		"lz-string": "^1.5.0",
 		"react": "18.3.0-canary-41f0e9dae-20230907",
 		"react-dom": "18.3.0-canary-41f0e9dae-20230907",
-		"react-resizable-panels": "^2.0.13"
+		"react-resizable-panels": "^2.0.18"
 	},
 	"devDependencies": {
-		"@rsbuild/core": "^0.5.0",
-		"@rsbuild/plugin-react": "^0.5.0",
-		"@types/react": "^18.2.66",
-		"@types/react-dom": "^18.2.22",
-		"dprint": "^0.45.0",
+		"@rsbuild/core": "^0.6.4",
+		"@rsbuild/plugin-react": "^0.6.4",
+		"@types/react": "^18.2.79",
+		"@types/react-dom": "^18.2.25",
+		"dprint": "^0.45.1",
 		"gen_dep_tag": "^0.0.3",
 		"monaco-editor": "^0.47.0",
-		"oxlint": "^0.2.13",
-		"typescript": "^5.4.2"
+		"oxlint": "^0.2.18",
+		"typescript": "^5.4.5"
 	},
 	"pnpm": {
 		"patchedDependencies": {
