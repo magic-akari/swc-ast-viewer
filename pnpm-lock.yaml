@@ -40,7 +40,7 @@ importers:
         version: 0.6.4
       '@rsbuild/plugin-react':
         specifier: ^0.6.4
-        version: 0.6.4(@rsbuild/core@0.6.4)(@swc/helpers@0.5.3)
+        version: 0.6.5(@rsbuild/core@0.6.4)(@swc/helpers@0.5.3)
       '@types/react':
         specifier: ^18.2.79
         version: 18.2.79
@@ -169,13 +169,16 @@ packages:
     engines: {node: '>=16.0.0'}
     hasBin: true
 
-  '@rsbuild/plugin-react@0.6.4':
-    resolution: {integrity: sha512-gp96Sb2Qa0HmFDaysuoTijbOUhg8QCBA8IwMI3YaZvLWsgFoOU8JBSHDPbu8eUHDwWfH41cKrhBWKAUf3q5Ffw==}
+  '@rsbuild/plugin-react@0.6.5':
+    resolution: {integrity: sha512-rJ/b0YYknqB/H73+3kDo6I489cOKGaD6/ISx/7WXh2yBPGOL8RmcWqNs/Cdn6jIefMjk2ma3p5CAuyuiVY/dig==}
     peerDependencies:
-      '@rsbuild/core': ^0.6.4
+      '@rsbuild/core': ^0.6.5
 
   '@rsbuild/shared@0.6.4':
     resolution: {integrity: sha512-MqaVYNRcq/eT7TNt/iMQzdyN71WwT1wEonnJIz4/x5wV0sf82BN0rrIwFLBSkEO/0HBf1K5bKGTjX727tJNztw==}
+
+  '@rsbuild/shared@0.6.5':
+    resolution: {integrity: sha512-OLF+V0JZqctCIJXoze7PN/wUvm9PyE0t/CqK2pZqWNbUnyhToZKfv1ZHVWeRMJhYgCOpsFjICHgt/MkZmeuYzg==}
 
   '@rspack/binding-darwin-arm64@0.6.2':
     resolution: {integrity: sha512-2+fpr27wJXVMsY441NRonws/e9RKBUWYX7onc0lFKVg/ZSmEfHWyrygcit/dpghIYQw9NJl5SiPGIPcIYeZd4w==}
@@ -503,16 +506,24 @@ snapshots:
       html-webpack-plugin: html-rspack-plugin@5.6.2(@rspack/core@0.6.2(@swc/helpers@0.5.3))
       postcss: 8.4.38
 
-  '@rsbuild/plugin-react@0.6.4(@rsbuild/core@0.6.4)(@swc/helpers@0.5.3)':
+  '@rsbuild/plugin-react@0.6.5(@rsbuild/core@0.6.4)(@swc/helpers@0.5.3)':
     dependencies:
       '@rsbuild/core': 0.6.4
-      '@rsbuild/shared': 0.6.4(@swc/helpers@0.5.3)
+      '@rsbuild/shared': 0.6.5(@swc/helpers@0.5.3)
       '@rspack/plugin-react-refresh': 0.6.2(react-refresh@0.14.0)
       react-refresh: 0.14.0
     transitivePeerDependencies:
       - '@swc/helpers'
 
   '@rsbuild/shared@0.6.4(@swc/helpers@0.5.3)':
+    dependencies:
+      '@rspack/core': 0.6.2(@swc/helpers@0.5.3)
+      caniuse-lite: 1.0.30001611
+      postcss: 8.4.38
+    transitivePeerDependencies:
+      - '@swc/helpers'
+
+  '@rsbuild/shared@0.6.5(@swc/helpers@0.5.3)':
     dependencies:
       '@rspack/core': 0.6.2(@swc/helpers@0.5.3)
       caniuse-lite: 1.0.30001611
