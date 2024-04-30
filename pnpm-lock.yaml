@@ -15,10 +15,10 @@ importers:
     dependencies:
       '@monaco-editor/loader':
         specifier: ^1.4.0
-        version: 1.4.0(monaco-editor@0.47.0)
+        version: 1.4.0(monaco-editor@0.48.0)
       '@monaco-editor/react':
         specifier: ^4.6.0
-        version: 4.6.0(patch_hash=7rehcztlh3wnmwcrogrsf6w34i)(monaco-editor@0.47.0)(react-dom@18.3.0-canary-41f0e9dae-20230907(react@18.3.0-canary-41f0e9dae-20230907))(react@18.3.0-canary-41f0e9dae-20230907)
+        version: 4.6.0(patch_hash=7rehcztlh3wnmwcrogrsf6w34i)(monaco-editor@0.48.0)(react-dom@18.3.0-canary-41f0e9dae-20230907(react@18.3.0-canary-41f0e9dae-20230907))(react@18.3.0-canary-41f0e9dae-20230907)
       '@wasm-fmt/biome_fmt':
         specifier: ^0.1.9
         version: 0.1.9
@@ -54,8 +54,8 @@ importers:
         specifier: ^0.0.3
         version: 0.0.3
       monaco-editor:
-        specifier: ^0.47.0
-        version: 0.47.0
+        specifier: ^0.48.0
+        version: 0.48.0
       oxlint:
         specifier: ^0.2.18
         version: 0.2.18
@@ -329,8 +329,8 @@ packages:
     resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
     hasBin: true
 
-  monaco-editor@0.47.0:
-    resolution: {integrity: sha512-VabVvHvQ9QmMwXu4du008ZDuyLnHs9j7ThVFsiJoXSOQk18+LF89N4ADzPbFenm0W4V2bGHnFBztIRQTgBfxzw==}
+  monaco-editor@0.48.0:
+    resolution: {integrity: sha512-goSDElNqFfw7iDHMg8WDATkfcyeLTNpBHQpO8incK6p5qZt5G/1j41X0xdGzpIkGojGXM+QiRQyLjnfDVvrpwA==}
 
   nanoid@3.3.7:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
@@ -458,15 +458,15 @@ snapshots:
       '@module-federation/runtime': 0.1.6
       '@module-federation/sdk': 0.1.6
 
-  '@monaco-editor/loader@1.4.0(monaco-editor@0.47.0)':
+  '@monaco-editor/loader@1.4.0(monaco-editor@0.48.0)':
     dependencies:
-      monaco-editor: 0.47.0
+      monaco-editor: 0.48.0
       state-local: 1.0.7
 
-  '@monaco-editor/react@4.6.0(patch_hash=7rehcztlh3wnmwcrogrsf6w34i)(monaco-editor@0.47.0)(react-dom@18.3.0-canary-41f0e9dae-20230907(react@18.3.0-canary-41f0e9dae-20230907))(react@18.3.0-canary-41f0e9dae-20230907)':
+  '@monaco-editor/react@4.6.0(patch_hash=7rehcztlh3wnmwcrogrsf6w34i)(monaco-editor@0.48.0)(react-dom@18.3.0-canary-41f0e9dae-20230907(react@18.3.0-canary-41f0e9dae-20230907))(react@18.3.0-canary-41f0e9dae-20230907)':
     dependencies:
-      '@monaco-editor/loader': 1.4.0(monaco-editor@0.47.0)
-      monaco-editor: 0.47.0
+      '@monaco-editor/loader': 1.4.0(monaco-editor@0.48.0)
+      monaco-editor: 0.48.0
       react: 18.3.0-canary-41f0e9dae-20230907
       react-dom: 18.3.0-canary-41f0e9dae-20230907(react@18.3.0-canary-41f0e9dae-20230907)
 
@@ -659,7 +659,7 @@ snapshots:
 
   lz-string@1.5.0: {}
 
-  monaco-editor@0.47.0: {}
+  monaco-editor@0.48.0: {}
 
   nanoid@3.3.7: {}
 

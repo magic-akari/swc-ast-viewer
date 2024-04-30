@@ -42,7 +42,7 @@
 		"@types/react-dom": "^18.2.25",
 		"dprint": "^0.45.1",
 		"gen_dep_tag": "^0.0.3",
-		"monaco-editor": "^0.47.0",
+		"monaco-editor": "^0.48.0",
 		"oxlint": "^0.2.18",
 		"typescript": "^5.4.5"
 	},
