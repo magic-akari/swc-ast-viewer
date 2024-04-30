@@ -33,7 +33,7 @@ importers:
         version: 18.3.0-canary-41f0e9dae-20230907(react@18.3.0-canary-41f0e9dae-20230907)
       react-resizable-panels:
         specifier: ^2.0.18
-        version: 2.0.18(react-dom@18.3.0-canary-41f0e9dae-20230907(react@18.3.0-canary-41f0e9dae-20230907))(react@18.3.0-canary-41f0e9dae-20230907)
+        version: 2.0.19(react-dom@18.3.0-canary-41f0e9dae-20230907(react@18.3.0-canary-41f0e9dae-20230907))(react@18.3.0-canary-41f0e9dae-20230907)
     devDependencies:
       '@rsbuild/core':
         specifier: ^0.6.4
@@ -364,8 +364,8 @@ packages:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}
     engines: {node: '>=0.10.0'}
 
-  react-resizable-panels@2.0.18:
-    resolution: {integrity: sha512-rKagCW6C8tTjWRq5jNsASsi4TB2a+IixL9++0G1+kPgAgvULPVf7kE0VbHysC3wdvcGYMa70O46C9YpG7CCkeA==}
+  react-resizable-panels@2.0.19:
+    resolution: {integrity: sha512-v3E41kfKSuCPIvJVb4nL4mIZjjKIn/gh6YqZF/gDfQDolv/8XnhJBek4EiV2gOr3hhc5A3kOGOayk3DhanpaQw==}
     peerDependencies:
       react: ^16.14.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.14.0 || ^17.0.0 || ^18.0.0
@@ -694,7 +694,7 @@ snapshots:
 
   react-refresh@0.14.0: {}
 
-  react-resizable-panels@2.0.18(react-dom@18.3.0-canary-41f0e9dae-20230907(react@18.3.0-canary-41f0e9dae-20230907))(react@18.3.0-canary-41f0e9dae-20230907):
+  react-resizable-panels@2.0.19(react-dom@18.3.0-canary-41f0e9dae-20230907(react@18.3.0-canary-41f0e9dae-20230907))(react@18.3.0-canary-41f0e9dae-20230907):
     dependencies:
       react: 18.3.0-canary-41f0e9dae-20230907
       react-dom: 18.3.0-canary-41f0e9dae-20230907(react@18.3.0-canary-41f0e9dae-20230907)
