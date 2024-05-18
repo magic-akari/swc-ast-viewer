@@ -1,5 +1,7 @@
 source "$HOME/.cargo/env"
 
+corepack enable
+
 echo "Building WASM..."
 pnpm run build:wasm
 
