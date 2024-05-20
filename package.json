@@ -25,7 +25,7 @@
 		"#swc_ast_viewer": "./crates/swc_ast_viewer/pkg/swc_ast_viewer.js",
 		"#swc_ast_viewer/*": "./crates/swc_ast_viewer/pkg/*"
 	},
-	"packageManager": "pnpm@9.1.1+sha256.9551e803dcb7a1839fdf5416153a844060c7bce013218ce823410532504ac10b",
+	"packageManager": "pnpm@9.1.2",
 	"dependencies": {
 		"@monaco-editor/loader": "^1.4.0",
 		"@monaco-editor/react": "^4.6.0",
