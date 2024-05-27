@@ -43,7 +43,7 @@
 		"dprint": "^0.45.1",
 		"gen_dep_tag": "^0.0.3",
 		"monaco-editor": "^0.49.0",
-		"oxlint": "^0.3.5",
+		"oxlint": "^0.4.0",
 		"typescript": "^5.4.5"
 	},
 	"pnpm": {
