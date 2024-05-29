@@ -14,7 +14,9 @@ if (location.hash.startsWith("#code/")) {
 	init_code = localStore.code;
 }
 
-createRoot(document.getElementById("root")!).render(
+declare const root: HTMLElement;
+
+createRoot(root).render(
 	<StrictMode>
 		<App code={init_code} />
 	</StrictMode>,

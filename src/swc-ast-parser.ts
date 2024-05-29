@@ -42,8 +42,8 @@ export function parse_swc_ast(source: string): Section[] {
 		const span_match = span_regex.exec(text);
 		if (span_match) {
 			// span: 7..8#2,
-			const lo = Number.parseInt(span_match[1]);
-			const hi = Number.parseInt(span_match[2]);
+			const lo = Number.parseInt(span_match[1], 10);
+			const hi = Number.parseInt(span_match[2], 10);
 			const span: Span = { lo, hi };
 			span_stack.push({ span, level });
 		}
@@ -53,7 +53,7 @@ export function parse_swc_ast(source: string): Section[] {
 		} else if (text[0] === "}") {
 			const top = section_stack.pop();
 			if (!top || top.type !== "start" || level !== top.level) {
-				throw Error("Invalid section");
+				throw new Error("Invalid section");
 			}
 
 			if (top.level !== level) {
