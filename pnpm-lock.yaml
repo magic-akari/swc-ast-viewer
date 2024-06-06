@@ -21,7 +21,7 @@ importers:
         version: 4.6.0(patch_hash=7rehcztlh3wnmwcrogrsf6w34i)(monaco-editor@0.49.0)(react-dom@18.3.0-canary-c3048aab4-20240326(react@18.3.0-canary-c3048aab4-20240326))(react@18.3.0-canary-c3048aab4-20240326)
       '@wasm-fmt/biome_fmt':
         specifier: ^0.1.9
-        version: 0.1.9
+        version: 0.1.10
       lz-string:
         specifier: ^1.5.0
         version: 1.5.0
@@ -254,8 +254,8 @@ packages:
   '@types/react@18.3.3':
     resolution: {integrity: sha512-hti/R0pS0q1/xx+TsI73XIqk26eBsISZ2R0wUijXIngRK9R/e7Xw/cXVxQK7R5JjW+SV4zGcn5hXjudkN/pLIw==}
 
-  '@wasm-fmt/biome_fmt@0.1.9':
-    resolution: {integrity: sha512-NTOhUb9N4fbRbfL83kFE0g2Ab8S/0ajN/fErUnizsY9KjEeW84TLB6HaPQ49BxJRrYnP84e6tyaAxKg8NHe8GQ==}
+  '@wasm-fmt/biome_fmt@0.1.10':
+    resolution: {integrity: sha512-PWFgZVhfS5gW9NX9EUNkeTZb2tPdATqgvaOUayx/6wksdqJT7Y8IMRv4We7J379j1UKt4R//lj4UaNM8z2y7jQ==}
 
   caniuse-lite@1.0.30001627:
     resolution: {integrity: sha512-4zgNiB8nTyV/tHhwZrFs88ryjls/lHiqFhrxCW4qSTeuRByBVnPYpDInchOIySWknznucaf31Z4KYqjfbrecVw==}
@@ -528,7 +528,7 @@ snapshots:
       '@types/prop-types': 15.7.12
       csstype: 3.1.3
 
-  '@wasm-fmt/biome_fmt@0.1.9': {}
+  '@wasm-fmt/biome_fmt@0.1.10': {}
 
   caniuse-lite@1.0.30001627: {}
 
