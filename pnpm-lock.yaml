@@ -36,11 +36,11 @@ importers:
         version: 2.0.19(react-dom@18.3.0-canary-c3048aab4-20240326(react@18.3.0-canary-c3048aab4-20240326))(react@18.3.0-canary-c3048aab4-20240326)
     devDependencies:
       '@rsbuild/core':
-        specifier: ^0.7.7
-        version: 0.7.7
+        specifier: ^0.7.8
+        version: 0.7.8
       '@rsbuild/plugin-react':
-        specifier: ^0.7.7
-        version: 0.7.7(@rsbuild/core@0.7.7)(@swc/helpers@0.5.3)
+        specifier: ^0.7.8
+        version: 0.7.8(@rsbuild/core@0.7.8)(@swc/helpers@0.5.3)
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.3
@@ -48,8 +48,8 @@ importers:
         specifier: ^18.3.0
         version: 18.3.0
       dprint:
-        specifier: ^0.46.2
-        version: 0.46.2
+        specifier: ^0.46.3
+        version: 0.46.3
       gen_dep_tag:
         specifier: ^0.0.3
         version: 0.0.3
@@ -65,38 +65,38 @@ importers:
 
 packages:
 
-  '@dprint/darwin-arm64@0.46.2':
-    resolution: {integrity: sha512-IA/VIWwmIJ4a9rLB0paU0ryXFHRV+NHyWykDa4F+3WgbyXVlv1PVncW5wgfZJ38wQM8FDfPUO2Ar8+Nkx8Fkfg==}
+  '@dprint/darwin-arm64@0.46.3':
+    resolution: {integrity: sha512-1ycDpGvclGHF3UG5V6peymPDg6ouNTqM6BjhVELQ6zwr+X98AMhq/1slgO8hwHtPcaS5qhTAS+PkzOmBJRegow==}
     cpu: [arm64]
     os: [darwin]
 
-  '@dprint/darwin-x64@0.46.2':
-    resolution: {integrity: sha512-YMY40MsN1CL/8fGPcZaA/3KeE09GHt7y4ZRJGCw8Cx7AjZ3P+SlNxL6X9v72eXUfotzudcZc5yC72tdUFaN7oA==}
+  '@dprint/darwin-x64@0.46.3':
+    resolution: {integrity: sha512-v5IpLmrY836Q5hJAxZuX097ZNQvoZgO6JKO4bK4l6XDhhHAw2XTIUr41+FM5r36ENxyASMk0NpHjhcHtih3o0g==}
     cpu: [x64]
     os: [darwin]
 
-  '@dprint/linux-arm64-glibc@0.46.2':
-    resolution: {integrity: sha512-brllu3G7nPV5GQTHnDF54ihGwgWHxRr03EQI0Mbbif94P/jl+Dqf9I6qWBSDVt/zQTThY1aYIZt+mpblD4oXZQ==}
+  '@dprint/linux-arm64-glibc@0.46.3':
+    resolution: {integrity: sha512-9P13g1vgV8RfQH2qBGa8YAfaOeWA42RIhj7lmWRpkDFtwau96reMKwnBBn8bHUnc5e6bSsbPUOMb/X1KMUKz/g==}
     cpu: [arm64]
     os: [linux]
 
-  '@dprint/linux-arm64-musl@0.46.2':
-    resolution: {integrity: sha512-+9pF6qmSMobvtlTk/PnyqYE66nlwyrg7TeJb+RhqAT3y40v8TT4XafdK5p5GOrC1qf1QV4PCLAuOrHAKaYLNqg==}
+  '@dprint/linux-arm64-musl@0.46.3':
+    resolution: {integrity: sha512-AAcdcMSZ6DEIoY9E0xQHjkZP+THP7EWsQge4TWzglSIjzn31YltglHAGYFcLB4CTJYpF0NsFDNFktzgkO+s0og==}
     cpu: [arm64]
     os: [linux]
 
-  '@dprint/linux-x64-glibc@0.46.2':
-    resolution: {integrity: sha512-iq0WfIyLrxaE0PVXw89FKwC2VIbo3Hb6PscEVtzWDOpm/bmURXs5JIjRFpAaGfwCZcwzds70bb7utT5ItgZtlA==}
+  '@dprint/linux-x64-glibc@0.46.3':
+    resolution: {integrity: sha512-c5cQ3G1rC64nBZ8Pd2LGWwzkEk4D7Ax9NrBbwYmNPvs6mFbGlJPC1+RD95x2WwIrIlMIciLG+Kxmt25PzBphmg==}
     cpu: [x64]
     os: [linux]
 
-  '@dprint/linux-x64-musl@0.46.2':
-    resolution: {integrity: sha512-Ins2SD0v5Q61b6WIcxnsoHT84E+kyiUjjespxcWzqLrXdPgy8ATLMfcx1vHS4ALD687+PkwCgPF8N2jK66Md6A==}
+  '@dprint/linux-x64-musl@0.46.3':
+    resolution: {integrity: sha512-ONtk2QtLcV0TqWOCOqzUFQixgk3JC+vnJLB5L6tQwT7BX5LzeircfE/1f4dg459iqejNC9MBXZkHnXqabvWSow==}
     cpu: [x64]
     os: [linux]
 
-  '@dprint/win32-x64@0.46.2':
-    resolution: {integrity: sha512-4msLVoyMppU5yPlxnCU0ibk6ahSQs1vcc7ToJkOi3LiCqu/KU+hYk2+bwqiZaQ1usi24iA9AIB+aBVA6X3VDXg==}
+  '@dprint/win32-x64@0.46.3':
+    resolution: {integrity: sha512-xvj4DSEilf0gGdT7CqnwNEgfWNuWqT6eIBxHDEUbmcn1vZ7IwirtqRq/nm3lmYtQaJ4EbtMQZvACHZwxC7G96w==}
     cpu: [x64]
     os: [win32]
 
@@ -164,18 +164,18 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@rsbuild/core@0.7.7':
-    resolution: {integrity: sha512-thalodQRNOHk8G05CsdPm07GJKxmwTLeVYNIx1UKH7fFr7z/gsLsxIikez0tErY3SEBbQuFWFC+bYdX6dduVxw==}
+  '@rsbuild/core@0.7.8':
+    resolution: {integrity: sha512-TAXMh+gP3D3t8ThpsSyy+sAGNtzwGpjUxmONf9IeByIsucNaP/ltWVENYqGn8g035ZAvwfXIgJOvWHCSWFSAYw==}
     engines: {node: '>=16.0.0'}
     hasBin: true
 
-  '@rsbuild/plugin-react@0.7.7':
-    resolution: {integrity: sha512-L/YYdgu7A9I9Cd8ZgVjYnRGDNqkIH3Su/5GZGBQTIS6H0BJytIo21sl7eV/pUWyAeZJg/1NMWjYKVMUja70EFA==}
+  '@rsbuild/plugin-react@0.7.8':
+    resolution: {integrity: sha512-FDqSZVoGxdxtOZcLGOJTQJ3CPzJm5cPqwllntMxuwF4r3JaJVCrx5vdblYVA/9KWxDzAq4OR82VIfUNV5G8UuA==}
     peerDependencies:
-      '@rsbuild/core': ^0.7.7
+      '@rsbuild/core': ^0.7.8
 
-  '@rsbuild/shared@0.7.7':
-    resolution: {integrity: sha512-xqHgpyVnAtf2WfJjn/Q7SCD+HbO0WsKwiaFm5U+jUNUYhJrrqO6Hf+ph/uUGv7LxDr4tiHNkZZH8BKHk6EtYbQ==}
+  '@rsbuild/shared@0.7.8':
+    resolution: {integrity: sha512-HyX294wfBVj63BFjuR4M3wYh/xQHPlzlObLHpfrX/FFfrNo+elDdnYb0SVKfuv0V8eTpaYuaWjjYq+kk+M+mIw==}
 
   '@rspack/binding-darwin-arm64@0.7.3':
     resolution: {integrity: sha512-3Gg5yosndYYV0NpYiQ/+Z5UErKv5R7yijE59qVnXBRI80BbkSKUFA8Ulb4btc39l3Rx35ud4EBOALXHlLNA9CQ==}
@@ -257,8 +257,8 @@ packages:
   '@wasm-fmt/biome_fmt@0.1.10':
     resolution: {integrity: sha512-PWFgZVhfS5gW9NX9EUNkeTZb2tPdATqgvaOUayx/6wksdqJT7Y8IMRv4We7J379j1UKt4R//lj4UaNM8z2y7jQ==}
 
-  caniuse-lite@1.0.30001634:
-    resolution: {integrity: sha512-fbBYXQ9q3+yp1q1gBk86tOFs4pyn/yxFm5ZNP18OXJDfA3txImOY9PhfxVggZ4vRHDqoU8NrKU81eN0OtzOgRA==}
+  caniuse-lite@1.0.30001636:
+    resolution: {integrity: sha512-bMg2vmr8XBsbL6Lr0UHXy/21m84FTxDLWn2FSqMd5PrlbMxwJlQnC2YWYxVgp66PZE+BBNF2jYQUBKCo1FDeZg==}
 
   core-js@3.36.1:
     resolution: {integrity: sha512-BTvUrwxVBezj5SZ3f10ImnX2oRByMxql3EimVqMysepbC9EeMUOpLwdy6Eoili2x6E4kf+ZUB5k/+Jv55alPfA==}
@@ -266,8 +266,8 @@ packages:
   csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
 
-  dprint@0.46.2:
-    resolution: {integrity: sha512-wjbOghUDqy4gNgW2TNkGOBCAfxwkWBUAyCEkqFZbrBKTGZ1DVbHB1YZOTwVlQNIcDcLWTZQz2AnIK1HjQC/rIQ==}
+  dprint@0.46.3:
+    resolution: {integrity: sha512-ACEd7B7sO/uvPvV/nsHbtkIeMqeD2a8XGO1DokROtKDUmI5WbuflGZOwyjFCYwy4rkX6FXoYBzGdEQ6um7BjCA==}
     hasBin: true
 
   fsevents@2.3.3:
@@ -358,25 +358,25 @@ packages:
 
 snapshots:
 
-  '@dprint/darwin-arm64@0.46.2':
+  '@dprint/darwin-arm64@0.46.3':
     optional: true
 
-  '@dprint/darwin-x64@0.46.2':
+  '@dprint/darwin-x64@0.46.3':
     optional: true
 
-  '@dprint/linux-arm64-glibc@0.46.2':
+  '@dprint/linux-arm64-glibc@0.46.3':
     optional: true
 
-  '@dprint/linux-arm64-musl@0.46.2':
+  '@dprint/linux-arm64-musl@0.46.3':
     optional: true
 
-  '@dprint/linux-x64-glibc@0.46.2':
+  '@dprint/linux-x64-glibc@0.46.3':
     optional: true
 
-  '@dprint/linux-x64-musl@0.46.2':
+  '@dprint/linux-x64-musl@0.46.3':
     optional: true
 
-  '@dprint/win32-x64@0.46.2':
+  '@dprint/win32-x64@0.46.3':
     optional: true
 
   '@module-federation/runtime-tools@0.1.6':
@@ -431,28 +431,28 @@ snapshots:
   '@oxlint/win32-x64@0.4.4':
     optional: true
 
-  '@rsbuild/core@0.7.7':
+  '@rsbuild/core@0.7.8':
     dependencies:
-      '@rsbuild/shared': 0.7.7(@swc/helpers@0.5.3)
+      '@rsbuild/shared': 0.7.8(@swc/helpers@0.5.3)
       '@rspack/core': 0.7.3(@swc/helpers@0.5.3)
       '@swc/helpers': 0.5.3
       core-js: 3.36.1
       html-webpack-plugin: html-rspack-plugin@5.7.2(@rspack/core@0.7.3(@swc/helpers@0.5.3))
       postcss: 8.4.38
 
-  '@rsbuild/plugin-react@0.7.7(@rsbuild/core@0.7.7)(@swc/helpers@0.5.3)':
+  '@rsbuild/plugin-react@0.7.8(@rsbuild/core@0.7.8)(@swc/helpers@0.5.3)':
     dependencies:
-      '@rsbuild/core': 0.7.7
-      '@rsbuild/shared': 0.7.7(@swc/helpers@0.5.3)
+      '@rsbuild/core': 0.7.8
+      '@rsbuild/shared': 0.7.8(@swc/helpers@0.5.3)
       '@rspack/plugin-react-refresh': 0.7.3(react-refresh@0.14.2)
       react-refresh: 0.14.2
     transitivePeerDependencies:
       - '@swc/helpers'
 
-  '@rsbuild/shared@0.7.7(@swc/helpers@0.5.3)':
+  '@rsbuild/shared@0.7.8(@swc/helpers@0.5.3)':
     dependencies:
       '@rspack/core': 0.7.3(@swc/helpers@0.5.3)
-      caniuse-lite: 1.0.30001634
+      caniuse-lite: 1.0.30001636
       html-webpack-plugin: html-rspack-plugin@5.7.2(@rspack/core@0.7.3(@swc/helpers@0.5.3))
       postcss: 8.4.38
     optionalDependencies:
@@ -503,7 +503,7 @@ snapshots:
     dependencies:
       '@module-federation/runtime-tools': 0.1.6
       '@rspack/binding': 0.7.3
-      caniuse-lite: 1.0.30001634
+      caniuse-lite: 1.0.30001636
       tapable: 2.2.1
       webpack-sources: 3.2.3
     optionalDependencies:
@@ -530,21 +530,21 @@ snapshots:
 
   '@wasm-fmt/biome_fmt@0.1.10': {}
 
-  caniuse-lite@1.0.30001634: {}
+  caniuse-lite@1.0.30001636: {}
 
   core-js@3.36.1: {}
 
   csstype@3.1.3: {}
 
-  dprint@0.46.2:
+  dprint@0.46.3:
     optionalDependencies:
-      '@dprint/darwin-arm64': 0.46.2
-      '@dprint/darwin-x64': 0.46.2
-      '@dprint/linux-arm64-glibc': 0.46.2
-      '@dprint/linux-arm64-musl': 0.46.2
-      '@dprint/linux-x64-glibc': 0.46.2
-      '@dprint/linux-x64-musl': 0.46.2
-      '@dprint/win32-x64': 0.46.2
+      '@dprint/darwin-arm64': 0.46.3
+      '@dprint/darwin-x64': 0.46.3
+      '@dprint/linux-arm64-glibc': 0.46.3
+      '@dprint/linux-arm64-musl': 0.46.3
+      '@dprint/linux-x64-glibc': 0.46.3
+      '@dprint/linux-x64-musl': 0.46.3
+      '@dprint/win32-x64': 0.46.3
 
   fsevents@2.3.3:
     optional: true
