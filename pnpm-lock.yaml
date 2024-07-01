@@ -61,7 +61,7 @@ importers:
         version: 0.4.4
       typescript:
         specifier: ^5.5.2
-        version: 5.5.2
+        version: 5.5.3
 
 packages:
 
@@ -347,8 +347,8 @@ packages:
   tslib@2.6.3:
     resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
 
-  typescript@5.5.2:
-    resolution: {integrity: sha512-NcRtPEOsPFFWjobJEtfihkLCZCXZt/os3zf8nTxjVH3RvTSxjrCamJpbExGvYOF+tFHc3pA65qpdwPbzjohhew==}
+  typescript@5.5.3:
+    resolution: {integrity: sha512-/hreyEujaB0w76zKo6717l3L0o/qEUtRgdvUBvlkhoWeOVMjMuHNHk0BRBzikzuGDqNmPQbg5ifMEqsHLiIUcQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -604,6 +604,6 @@ snapshots:
 
   tslib@2.6.3: {}
 
-  typescript@5.5.2: {}
+  typescript@5.5.3: {}
 
   webpack-sources@3.2.3: {}
