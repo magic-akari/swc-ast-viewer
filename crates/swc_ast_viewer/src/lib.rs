@@ -1,5 +1,4 @@
 use anyhow::Result;
-use serde::Deserialize;
 use std::{str::FromStr, sync::Arc};
 use swc_core::{
     self,
@@ -44,7 +43,10 @@ fn javascript(fm: &SourceFile, errors: &mut Vec<SWCError>, jsx: bool) -> PResult
     )
 }
 
-#[derive(Default, PartialEq, Deserialize)]
+#[wasm_bindgen(typescript_custom_section)]
+const TS_FileType: &'static str = r#"type FileType = "js" | "jsx" | "ts" | "tsx";"#;
+
+#[derive(Default, PartialEq)]
 enum FileType {
     JavaScript,
     JavaScriptReact,
@@ -75,17 +77,16 @@ impl FromStr for FileType {
 
 #[wasm_bindgen]
 extern "C" {
-    #[wasm_bindgen(typescript_type = "Config")]
+    #[wasm_bindgen(typescript_type = "FileType")]
     pub type File;
 }
 
 #[wasm_bindgen]
 pub fn ast(input: &str, file_type: Option<File>) -> Result<String, String> {
-    let file_type: FileType = if let Some(file_type) = file_type {
-        serde_wasm_bindgen::from_value(file_type.clone()).map_err(|op| op.to_string())?
-    } else {
-        Default::default()
-    };
+    let file_type: FileType = file_type
+        .and_then(|file_type| file_type.as_string())
+        .and_then(|s| s.parse().ok())
+        .unwrap_or_default();
 
     let cm: Arc<SourceMap> = Default::default();
     let fm = cm.new_source_file(Arc::new(FileName::Anon), input.into());
