@@ -7,7 +7,7 @@ use swc_core::{
     ecma::{
         ast::*,
         parser::{
-            error::Error as SWCError, parse_file_as_program, EsConfig, PResult, Syntax, TsConfig,
+            error::Error as SWCError, parse_file_as_program, EsSyntax, PResult, Syntax, TsSyntax,
         },
         transforms::base::resolver,
         visit::VisitMutWith,
@@ -19,7 +19,7 @@ use wasm_bindgen::prelude::wasm_bindgen;
 fn typescript(fm: &SourceFile, errors: &mut Vec<SWCError>, tsx: bool) -> PResult<Program> {
     parse_file_as_program(
         &fm,
-        Syntax::Typescript(TsConfig {
+        Syntax::Typescript(TsSyntax {
             tsx,
             decorators: true,
             ..Default::default()
@@ -33,7 +33,7 @@ fn typescript(fm: &SourceFile, errors: &mut Vec<SWCError>, tsx: bool) -> PResult
 fn javascript(fm: &SourceFile, errors: &mut Vec<SWCError>, jsx: bool) -> PResult<Program> {
     parse_file_as_program(
         &fm,
-        Syntax::Es(EsConfig {
+        Syntax::Es(EsSyntax {
             jsx,
             decorators: true,
             ..Default::default()
@@ -88,7 +88,7 @@ pub fn ast(input: &str, file_type: Option<File>) -> Result<String, String> {
     };
 
     let cm: Arc<SourceMap> = Default::default();
-    let fm = cm.new_source_file(FileName::Anon, input.into());
+    let fm = cm.new_source_file(Arc::new(FileName::Anon), input.into());
     let mut errors: Vec<swc_core::ecma::parser::error::Error> = Default::default();
 
     let ast = try_with_handler(cm, Default::default(), |handler| {
