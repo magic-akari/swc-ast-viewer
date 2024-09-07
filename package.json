@@ -17,6 +17,7 @@
 		"build": "rsbuild build",
 		"preview": "rsbuild preview",
 		"build:wasm": "wasm-pack build --target=web crates/swc_ast_viewer --release",
+		"postbuild:wasm": "crates/swc_ast_viewer/scripts/postbuild.sh",
 		"fix:fmt": "dprint fmt",
 		"check:fmt": "dprint check",
 		"check:lint": "oxlint src -D correctness -D pedantic"
