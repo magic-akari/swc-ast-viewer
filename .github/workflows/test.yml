@@ -8,6 +8,42 @@ on:
     types: ["opened", "reopened", "synchronize"]
 
 jobs:
+  cargo-fmt:
+    name: Cargo fmt
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: cargo fmt -- --check
+
+  cargo-clippy:
+    name: Cargo clippy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: cargo clippy
+
+  wasm-build:
+    name: Wasm build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install wasm-pack
+        run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+
+      - name: Build wasm
+        run: npm run build:wasm
+
+      - name: Package
+        run: npm pack
+        working-directory: crates/swc_ast_viewer/pkg
+
+      - name: Upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: crates/swc_ast_viewer/pkg
+
   test:
     runs-on: ubuntu-latest
     steps:
