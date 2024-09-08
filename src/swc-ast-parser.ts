@@ -27,7 +27,7 @@ interface PartialSection {
 	pos: Position;
 }
 
-const span_regex = /^span: (\d+)\.\.(\d+)#\d+,$/;
+const span_regex = /^span: (\d+)\.\.(\d+),$/;
 
 export function parse_swc_ast(source: string): Section[] {
 	const lines = source.split("\n");
@@ -41,7 +41,7 @@ export function parse_swc_ast(source: string): Section[] {
 
 		const span_match = span_regex.exec(text);
 		if (span_match) {
-			// span: 7..8#2,
+			// span: 7..8,
 			const lo = Number.parseInt(span_match[1], 10);
 			const hi = Number.parseInt(span_match[2], 10);
 			const span: Span = { lo, hi };
