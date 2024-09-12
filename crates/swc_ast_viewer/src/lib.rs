@@ -17,7 +17,7 @@ use wasm_bindgen::prelude::wasm_bindgen;
 
 fn typescript(fm: &SourceFile, errors: &mut Vec<SWCError>, tsx: bool) -> PResult<Program> {
     parse_file_as_program(
-        &fm,
+        fm,
         Syntax::Typescript(TsSyntax {
             tsx,
             decorators: true,
@@ -31,7 +31,7 @@ fn typescript(fm: &SourceFile, errors: &mut Vec<SWCError>, tsx: bool) -> PResult
 
 fn javascript(fm: &SourceFile, errors: &mut Vec<SWCError>, jsx: bool) -> PResult<Program> {
     parse_file_as_program(
-        &fm,
+        fm,
         Syntax::Es(EsSyntax {
             jsx,
             decorators: true,
