@@ -1,7 +1,7 @@
 {
 	"name": "swc-ast-viewer",
 	"private": true,
-	"version": "0.104.1",
+	"version": "0.105.0",
 	"description": "AST Viewer for swc",
 	"repository": "https://github.com/magic-akari/swc-ast-viewer.git",
 	"author": "magic-akari <akari.ccino@gmail.com>",
