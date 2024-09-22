@@ -32,6 +32,7 @@ jobs:
               with:
                   name: build
                   path: crates/swc_ast_viewer/pkg
+                  include-hidden-files: true
 
     publish-npm:
         if: startsWith(github.ref, 'refs/tags/v')
