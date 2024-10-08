@@ -33,7 +33,7 @@
 		"@wasm-fmt/biome_fmt": "^0.1.10",
 		"lz-string": "^1.5.0",
 		"react": "18.3.0-canary-c3048aab4-20240326",
-		"react-dom": "18.3.0-canary-c3048aab4-20240326",
+		"react-dom": "18.3.1",
 		"react-resizable-panels": "^2.1.2"
 	},
 	"devDependencies": {
