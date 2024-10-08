@@ -18,7 +18,7 @@ importers:
         version: 1.4.0(monaco-editor@0.52.0)
       '@monaco-editor/react':
         specifier: ^4.6.0
-        version: 4.6.0(patch_hash=7rehcztlh3wnmwcrogrsf6w34i)(monaco-editor@0.52.0)(react-dom@18.3.0-canary-c3048aab4-20240326(react@18.3.0-canary-c3048aab4-20240326))(react@18.3.0-canary-c3048aab4-20240326)
+        version: 4.6.0(patch_hash=7rehcztlh3wnmwcrogrsf6w34i)(monaco-editor@0.52.0)(react-dom@18.3.0-canary-c3048aab4-20240326(react@18.3.1))(react@18.3.1)
       '@wasm-fmt/biome_fmt':
         specifier: ^0.1.10
         version: 0.1.10
@@ -26,14 +26,14 @@ importers:
         specifier: ^1.5.0
         version: 1.5.0
       react:
-        specifier: 18.3.0-canary-c3048aab4-20240326
-        version: 18.3.0-canary-c3048aab4-20240326
+        specifier: 18.3.1
+        version: 18.3.1
       react-dom:
         specifier: 18.3.0-canary-c3048aab4-20240326
-        version: 18.3.0-canary-c3048aab4-20240326(react@18.3.0-canary-c3048aab4-20240326)
+        version: 18.3.0-canary-c3048aab4-20240326(react@18.3.1)
       react-resizable-panels:
         specifier: ^2.1.2
-        version: 2.1.2(react-dom@18.3.0-canary-c3048aab4-20240326(react@18.3.0-canary-c3048aab4-20240326))(react@18.3.0-canary-c3048aab4-20240326)
+        version: 2.1.2(react-dom@18.3.0-canary-c3048aab4-20240326(react@18.3.1))(react@18.3.1)
     devDependencies:
       '@rsbuild/core':
         specifier: 1.0.10
@@ -290,6 +290,13 @@ packages:
   html-entities@2.5.2:
     resolution: {integrity: sha512-K//PSRMQk4FZ78Kyau+mZurHn3FH0Vwr+H36eE0rPbeYkRRi9YxceYPhuN60UwWorxyKHhqoAJl2OFKa4BVtaA==}
 
+  js-tokens@4.0.0:
+    resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
+
+  loose-envify@1.4.0:
+    resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
+    hasBin: true
+
   lz-string@1.5.0:
     resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
     hasBin: true
@@ -317,8 +324,8 @@ packages:
       react: ^16.14.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.14.0 || ^17.0.0 || ^18.0.0
 
-  react@18.3.0-canary-c3048aab4-20240326:
-    resolution: {integrity: sha512-luG9vwr1P496ZYwX2nS4HJQ6ZYU1+014hVBR1HtAnfYZyPPaByAlrKzcE4uembPeRtkA02aQfh6MSOtorY4Aeg==}
+  react@18.3.1:
+    resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
     engines: {node: '>=0.10.0'}
 
   scheduler@0.24.0-canary-c3048aab4-20240326:
@@ -385,12 +392,12 @@ snapshots:
       monaco-editor: 0.52.0
       state-local: 1.0.7
 
-  '@monaco-editor/react@4.6.0(patch_hash=7rehcztlh3wnmwcrogrsf6w34i)(monaco-editor@0.52.0)(react-dom@18.3.0-canary-c3048aab4-20240326(react@18.3.0-canary-c3048aab4-20240326))(react@18.3.0-canary-c3048aab4-20240326)':
+  '@monaco-editor/react@4.6.0(patch_hash=7rehcztlh3wnmwcrogrsf6w34i)(monaco-editor@0.52.0)(react-dom@18.3.0-canary-c3048aab4-20240326(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@monaco-editor/loader': 1.4.0(monaco-editor@0.52.0)
       monaco-editor: 0.52.0
-      react: 18.3.0-canary-c3048aab4-20240326
-      react-dom: 18.3.0-canary-c3048aab4-20240326(react@18.3.0-canary-c3048aab4-20240326)
+      react: 18.3.1
+      react-dom: 18.3.0-canary-c3048aab4-20240326(react@18.3.1)
 
   '@oxlint/darwin-arm64@0.9.5':
     optional: true
@@ -533,6 +540,12 @@ snapshots:
 
   html-entities@2.5.2: {}
 
+  js-tokens@4.0.0: {}
+
+  loose-envify@1.4.0:
+    dependencies:
+      js-tokens: 4.0.0
+
   lz-string@1.5.0: {}
 
   monaco-editor@0.52.0: {}
@@ -548,19 +561,21 @@ snapshots:
       '@oxlint/win32-arm64': 0.9.5
       '@oxlint/win32-x64': 0.9.5
 
-  react-dom@18.3.0-canary-c3048aab4-20240326(react@18.3.0-canary-c3048aab4-20240326):
+  react-dom@18.3.0-canary-c3048aab4-20240326(react@18.3.1):
     dependencies:
-      react: 18.3.0-canary-c3048aab4-20240326
+      react: 18.3.1
       scheduler: 0.24.0-canary-c3048aab4-20240326
 
   react-refresh@0.14.2: {}
 
-  react-resizable-panels@2.1.2(react-dom@18.3.0-canary-c3048aab4-20240326(react@18.3.0-canary-c3048aab4-20240326))(react@18.3.0-canary-c3048aab4-20240326):
+  react-resizable-panels@2.1.2(react-dom@18.3.0-canary-c3048aab4-20240326(react@18.3.1))(react@18.3.1):
     dependencies:
-      react: 18.3.0-canary-c3048aab4-20240326
-      react-dom: 18.3.0-canary-c3048aab4-20240326(react@18.3.0-canary-c3048aab4-20240326)
+      react: 18.3.1
+      react-dom: 18.3.0-canary-c3048aab4-20240326(react@18.3.1)
 
-  react@18.3.0-canary-c3048aab4-20240326: {}
+  react@18.3.1:
+    dependencies:
+      loose-envify: 1.4.0
 
   scheduler@0.24.0-canary-c3048aab4-20240326: {}
 
