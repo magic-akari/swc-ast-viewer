@@ -10,16 +10,12 @@ export default defineConfig({
 		assetPrefix: "./",
 		polyfill: "off",
 		externals: {
-			"react": "React",
-			"react-dom": "ReactDOM",
 			"@monaco-editor/loader": "monaco_loader",
 		},
 	},
 	html: {
 		title: "SWC AST Viewer",
 		tags: [
-			tag(presets.react),
-			tag(presets["react-dom"]),
 			tag({
 				name: "@monaco-editor/loader",
 				entry: "lib/umd/monaco-loader.min.js",

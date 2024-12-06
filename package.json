@@ -30,22 +30,22 @@
 	"dependencies": {
 		"@monaco-editor/loader": "^1.4.0",
 		"@monaco-editor/react": "^4.6.0",
-		"@wasm-fmt/biome_fmt": "^0.1.10",
+		"@wasm-fmt/biome_fmt": "^0.1.12",
 		"lz-string": "^1.5.0",
-		"react": "18.3.0-canary-c3048aab4-20240326",
-		"react-dom": "18.3.0-canary-c3048aab4-20240326",
-		"react-resizable-panels": "^2.1.2"
+		"react": "19.0.0",
+		"react-dom": "19.0.0",
+		"react-resizable-panels": "^2.1.7"
 	},
 	"devDependencies": {
-		"@rsbuild/core": "1.0.15",
+		"@rsbuild/core": "1.1.8",
 		"@rsbuild/plugin-react": "1.0.7",
-		"@types/react": "^18.3.5",
-		"@types/react-dom": "^18.3.0",
-		"dprint": "^0.47.2",
+		"@types/react": "^19.0.0",
+		"@types/react-dom": "^19.0.0",
+		"dprint": "^0.47.6",
 		"gen_dep_tag": "^0.0.3",
 		"monaco-editor": "^0.52.0",
-		"oxlint": "^0.13.2",
-		"typescript": "^5.6.2"
+		"oxlint": "^0.14.1",
+		"typescript": "^5.7.2"
 	},
 	"pnpm": {
 		"patchedDependencies": {
