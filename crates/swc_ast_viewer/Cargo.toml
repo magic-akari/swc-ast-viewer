@@ -14,7 +14,7 @@ version.workspace     = true
 
 [dependencies]
 anyhow             = "1.0.94"
-wasm-bindgen       = "0.2.97"
+wasm-bindgen       = "0.2.99"
 
     [dependencies.swc_core]
     features = [
