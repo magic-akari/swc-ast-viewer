@@ -36,11 +36,11 @@ importers:
         version: 2.1.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
       '@rsbuild/core':
-        specifier: 1.1.12
-        version: 1.1.12
+        specifier: 1.1.13
+        version: 1.1.13
       '@rsbuild/plugin-react':
         specifier: 1.1.0
-        version: 1.1.0(@rsbuild/core@1.1.12)
+        version: 1.1.0(@rsbuild/core@1.1.13)
       '@types/react':
         specifier: ^19.0.0
         version: 19.0.0
@@ -174,8 +174,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@rsbuild/core@1.1.12':
-    resolution: {integrity: sha512-9f+E47fMf51Cg4W7CF2Q4f7BRSslVV/+TRvs5ScclYanqXEFtAGV9nuecJEL6Qc9jJV61lES0esPTFdPPnWPGw==}
+  '@rsbuild/core@1.1.13':
+    resolution: {integrity: sha512-XBL2hrin8731W6iTGGL+x3cv07n4vm2D7u6XHRwtQkRfySzAqGx7ThlQLdNX/dJwfsoQrYQuWl/qzaljjXtGtg==}
     engines: {node: '>=16.7.0'}
     hasBin: true
 
@@ -416,16 +416,16 @@ snapshots:
   '@oxlint/win32-x64@0.14.1':
     optional: true
 
-  '@rsbuild/core@1.1.12':
+  '@rsbuild/core@1.1.13':
     dependencies:
       '@rspack/core': 1.1.8(@swc/helpers@0.5.15)
       '@rspack/lite-tapable': 1.0.1
       '@swc/helpers': 0.5.15
       core-js: 3.39.0
 
-  '@rsbuild/plugin-react@1.1.0(@rsbuild/core@1.1.12)':
+  '@rsbuild/plugin-react@1.1.0(@rsbuild/core@1.1.13)':
     dependencies:
-      '@rsbuild/core': 1.1.12
+      '@rsbuild/core': 1.1.13
       '@rspack/plugin-react-refresh': 1.0.0(react-refresh@0.16.0)
       react-refresh: 0.16.0
 
