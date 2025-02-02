@@ -41,7 +41,7 @@
 		"@rsbuild/plugin-react": "1.1.0",
 		"@types/react": "^19.0.0",
 		"@types/react-dom": "^19.0.0",
-		"dprint": "^0.47.6",
+		"dprint": "^0.49.0",
 		"gen_dep_tag": "^0.0.3",
 		"monaco-editor": "^0.52.0",
 		"oxlint": "^0.14.1",
