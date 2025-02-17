@@ -43,7 +43,7 @@ importers:
         version: 1.1.0(@rsbuild/core@1.1.13)
       '@types/react':
         specifier: ^19.0.0
-        version: 19.0.0
+        version: 19.0.10
       '@types/react-dom':
         specifier: ^19.0.0
         version: 19.0.0
@@ -259,8 +259,8 @@ packages:
   '@types/react-dom@19.0.0':
     resolution: {integrity: sha512-1KfiQKsH1o00p9m5ag12axHQSb3FOU9H20UTrujVSkNhuCrRHiQWFqgEnTNK5ZNfnzZv8UWrnXVqCmCF9fgY3w==}
 
-  '@types/react@19.0.0':
-    resolution: {integrity: sha512-MY3oPudxvMYyesqs/kW1Bh8y9VqSmf+tzqw3ae8a9DZW68pUe3zAdHeI1jc6iAysuRdACnVknHP8AhwD4/dxtg==}
+  '@types/react@19.0.10':
+    resolution: {integrity: sha512-JuRQ9KXLEjaUNjTWpzuR231Z2WpIwczOkBEIvbHNCzQefFIT0L8IqE6NV6ULLyC1SI/i234JnDoMkfg+RjQj2g==}
 
   '@wasm-fmt/biome_fmt@0.1.12':
     resolution: {integrity: sha512-2t7UdDh9sQ4JCXLXHfJeeqmeRcijbbgmLQ69sREWuYU7nMp8R/4F9g4bIEvJVvWmA4sNmPRvPJW/i3s5lDS11A==}
@@ -492,9 +492,9 @@ snapshots:
 
   '@types/react-dom@19.0.0':
     dependencies:
-      '@types/react': 19.0.0
+      '@types/react': 19.0.10
 
-  '@types/react@19.0.0':
+  '@types/react@19.0.10':
     dependencies:
       csstype: 3.1.3
 
