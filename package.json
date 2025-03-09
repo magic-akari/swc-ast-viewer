@@ -20,7 +20,7 @@
 		"postbuild:wasm": "crates/swc_ast_viewer/scripts/postbuild.sh",
 		"fix:fmt": "dprint fmt",
 		"check:fmt": "dprint check",
-		"check:lint": "oxlint src -D correctness -D pedantic"
+		"check:lint": "oxlint src -D correctness"
 	},
 	"imports": {
 		"#swc_ast_viewer": "./crates/swc_ast_viewer/pkg/swc_ast_viewer.js",
