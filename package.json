@@ -26,26 +26,26 @@
 		"#swc_ast_viewer": "./crates/swc_ast_viewer/pkg/swc_ast_viewer.js",
 		"#swc_ast_viewer/*": "./crates/swc_ast_viewer/pkg/*"
 	},
-	"packageManager": "pnpm@9.14.4+sha512.c8180b3fbe4e4bca02c94234717896b5529740a6cbadf19fa78254270403ea2f27d4e1d46a08a0f56c89b63dc8ebfd3ee53326da720273794e6200fcf0d184ab",
+	"packageManager": "pnpm@10.6.1+sha512.40ee09af407fa9fbb5fbfb8e1cb40fbb74c0af0c3e10e9224d7b53c7658528615b2c92450e74cfad91e3a2dcafe3ce4050d80bda71d757756d2ce2b66213e9a3",
 	"dependencies": {
-		"@monaco-editor/loader": "^1.4.0",
-		"@monaco-editor/react": "^4.6.0",
-		"@wasm-fmt/biome_fmt": "^0.1.12",
+		"@monaco-editor/loader": "1.4.0",
+		"@monaco-editor/react": "4.6.0",
+		"@wasm-fmt/biome_fmt": "^0.1.13",
 		"lz-string": "^1.5.0",
 		"react": "19.0.0",
 		"react-dom": "19.0.0",
 		"react-resizable-panels": "^2.1.7"
 	},
 	"devDependencies": {
-		"@rsbuild/core": "1.1.13",
-		"@rsbuild/plugin-react": "1.1.0",
-		"@types/react": "^19.0.0",
-		"@types/react-dom": "^19.0.0",
-		"dprint": "^0.47.6",
+		"@rsbuild/core": "1.2.16",
+		"@rsbuild/plugin-react": "1.1.1",
+		"@types/react": "^19.0.10",
+		"@types/react-dom": "^19.0.4",
+		"dprint": "^0.49.0",
 		"gen_dep_tag": "^0.0.3",
-		"monaco-editor": "^0.52.0",
-		"oxlint": "^0.14.1",
-		"typescript": "^5.7.2"
+		"monaco-editor": "^0.52.2",
+		"oxlint": "^0.15.13",
+		"typescript": "^5.8.2"
 	},
 	"pnpm": {
 		"patchedDependencies": {
