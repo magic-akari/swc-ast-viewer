@@ -57,8 +57,8 @@ importers:
         specifier: ^0.52.2
         version: 0.52.2
       oxlint:
-        specifier: ^0.15.13
-        version: 0.15.13
+        specifier: ^0.16.0
+        version: 0.16.0
       typescript:
         specifier: ^5.8.2
         version: 5.8.2
@@ -137,43 +137,43 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@oxlint/darwin-arm64@0.15.13':
-    resolution: {integrity: sha512-YxUmq/J8+RKniDOFTbmMu6OEd6LliL7gVr9vRk3J3r59AGlV9oprcovWtf65wtDRjGWPwu1y94ghunSTw395+Q==}
+  '@oxlint/darwin-arm64@0.16.0':
+    resolution: {integrity: sha512-t4v+WxVuU+cQNZuDDZ+I9p6FTuSrQpTs787UspcB3j3E50lw6+aDWiLx/Snvkn5C214B8hp+z8lnwYkgWoFqiw==}
     cpu: [arm64]
     os: [darwin]
 
-  '@oxlint/darwin-x64@0.15.13':
-    resolution: {integrity: sha512-JWKp7iAnFYbWmGSiFgGzzlykunCLVEVdA3P1KdYRc8VFMWt4m1guPsvqwGkqyRmv4wzCIdhNHIUa7/tAGPp6kg==}
+  '@oxlint/darwin-x64@0.16.0':
+    resolution: {integrity: sha512-CbV7VHpO7OpBXgBZRaNMOgVlnZ29gocjaFbrbEv/23XqeeDLQP3++O7i1Q7SEmeaELxM6NYW1u9+OcvX3uudwQ==}
     cpu: [x64]
     os: [darwin]
 
-  '@oxlint/linux-arm64-gnu@0.15.13':
-    resolution: {integrity: sha512-2ruYMs1Dex7GutXbsj5qAU1c0GGow5s+BCS6f1ls288yXqzE+NHElCQR8OzKl6JcPEwLosfuLJGRhpz5kFcFwQ==}
+  '@oxlint/linux-arm64-gnu@0.16.0':
+    resolution: {integrity: sha512-wwwTsSk62vFAYYsj4Et/leb9VndZwZBf1R6Nta1yWhljkSVq1GBKJ9SeU3it833QEJuFth2A2L5xdfiGkZZIYg==}
     cpu: [arm64]
     os: [linux]
 
-  '@oxlint/linux-arm64-musl@0.15.13':
-    resolution: {integrity: sha512-TlQLe8bPr3FG5qhHkMNRvhdxITKNwLIqTLb0er84yQGFjQnvoLEVVe56BPsCNs9AwO8bw9WgLo22AlP7wuBOAw==}
+  '@oxlint/linux-arm64-musl@0.16.0':
+    resolution: {integrity: sha512-YW7g8hG/XJ+g2RgDvhjY/GUaq/p8xIldsQD9AZkFJAaBsmN3tTi1VUS2orhxBi7feXE7FhP85LqQk+WJxarUSw==}
     cpu: [arm64]
     os: [linux]
 
-  '@oxlint/linux-x64-gnu@0.15.13':
-    resolution: {integrity: sha512-duyk1FXb45D1PEbdOhnS4GCyD3MxcCJaDurG+VCGUeZOEzvQXI5vdOqmieA3nsizzoTFjHR98wwXCE426ETlcw==}
+  '@oxlint/linux-x64-gnu@0.16.0':
+    resolution: {integrity: sha512-QY8W3724Fv9W5Mh42/EdV5j4qfwFnV1rouLzvWgUz/g51nROt/6rMbv65ssJo2yBUHHj5KGMfmC97VJZAF9TKA==}
     cpu: [x64]
     os: [linux]
 
-  '@oxlint/linux-x64-musl@0.15.13':
-    resolution: {integrity: sha512-fs53fyfXRVtsy+QGA0zp8o1+3XL+e6FDtdvdjsdVBif0O7gpuVJuLFpyv2AlL7r3J4J8E4WaVk0poAvmlwoOZg==}
+  '@oxlint/linux-x64-musl@0.16.0':
+    resolution: {integrity: sha512-adH6bJipJL/WjaMAc8JNevTgU7IpY5nh8a8tM/DAZdUyt7e/zd+vDw+o3NCBGcCWKu3VcY+XsMZK2NMqnyzeig==}
     cpu: [x64]
     os: [linux]
 
-  '@oxlint/win32-arm64@0.15.13':
-    resolution: {integrity: sha512-QcgHzVpFK6oBARsgjc4DjApsbkdMi/aJgv2r885vvVWABlzKV302J5FyHs4osmaTVEImf8B8FAX+MlWGAIQtEw==}
+  '@oxlint/win32-arm64@0.16.0':
+    resolution: {integrity: sha512-0GPNs354IHKdbvqsdjf1YGqaKbFWcT/ngly9+oAUSsDC5/Rg4sZj4glZCVDhZUFMQ1kyClAYxX+vbKbTW/cOmQ==}
     cpu: [arm64]
     os: [win32]
 
-  '@oxlint/win32-x64@0.15.13':
-    resolution: {integrity: sha512-YQ52fcXHyK2dmUAiM1U4UTBFxeQ3f4HyeE19CinceIzz6gRev1c0aK2JzCCLZnajO2IB5/z5tkdcFDzisKx/Pw==}
+  '@oxlint/win32-x64@0.16.0':
+    resolution: {integrity: sha512-0Lb599lav9THJRiUYkNugueq98VliinY92yzv5u2NDiIsq5aqqHIjmpJ8L051zCEhyzcbw8KBRV3FofqnroJTA==}
     cpu: [x64]
     os: [win32]
 
@@ -310,8 +310,8 @@ packages:
   monaco-editor@0.52.2:
     resolution: {integrity: sha512-GEQWEZmfkOGLdd3XK8ryrfWz3AIP8YymVXiPHEdewrUq7mh0qrKrfHLNCXcbB6sTnMLnOZ3ztSiKcciFUkIJwQ==}
 
-  oxlint@0.15.13:
-    resolution: {integrity: sha512-MmzoIxomX7wmM3x55Nq7yKVirkXDJePXrUUqyQPSk/PhixeTZ8PVTsZ32jqjBiSphoL6cZIXYkd5iBmqW/zA1Q==}
+  oxlint@0.16.0:
+    resolution: {integrity: sha512-Kx3ehMy+F0sIvg8PPKB967SB7cjjj98vxVOpQaAfKFIYrQFkM10usb3aQKqk1HXYivMvs6axdZM1sLq2fvjbKw==}
     engines: {node: '>=8.*'}
     hasBin: true
 
@@ -413,28 +413,28 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  '@oxlint/darwin-arm64@0.15.13':
+  '@oxlint/darwin-arm64@0.16.0':
     optional: true
 
-  '@oxlint/darwin-x64@0.15.13':
+  '@oxlint/darwin-x64@0.16.0':
     optional: true
 
-  '@oxlint/linux-arm64-gnu@0.15.13':
+  '@oxlint/linux-arm64-gnu@0.16.0':
     optional: true
 
-  '@oxlint/linux-arm64-musl@0.15.13':
+  '@oxlint/linux-arm64-musl@0.16.0':
     optional: true
 
-  '@oxlint/linux-x64-gnu@0.15.13':
+  '@oxlint/linux-x64-gnu@0.16.0':
     optional: true
 
-  '@oxlint/linux-x64-musl@0.15.13':
+  '@oxlint/linux-x64-musl@0.16.0':
     optional: true
 
-  '@oxlint/win32-arm64@0.15.13':
+  '@oxlint/win32-arm64@0.16.0':
     optional: true
 
-  '@oxlint/win32-x64@0.15.13':
+  '@oxlint/win32-x64@0.16.0':
     optional: true
 
   '@rsbuild/core@1.2.16':
@@ -558,16 +558,16 @@ snapshots:
 
   monaco-editor@0.52.2: {}
 
-  oxlint@0.15.13:
+  oxlint@0.16.0:
     optionalDependencies:
-      '@oxlint/darwin-arm64': 0.15.13
-      '@oxlint/darwin-x64': 0.15.13
-      '@oxlint/linux-arm64-gnu': 0.15.13
-      '@oxlint/linux-arm64-musl': 0.15.13
-      '@oxlint/linux-x64-gnu': 0.15.13
-      '@oxlint/linux-x64-musl': 0.15.13
-      '@oxlint/win32-arm64': 0.15.13
-      '@oxlint/win32-x64': 0.15.13
+      '@oxlint/darwin-arm64': 0.16.0
+      '@oxlint/darwin-x64': 0.16.0
+      '@oxlint/linux-arm64-gnu': 0.16.0
+      '@oxlint/linux-arm64-musl': 0.16.0
+      '@oxlint/linux-x64-gnu': 0.16.0
+      '@oxlint/linux-x64-musl': 0.16.0
+      '@oxlint/win32-arm64': 0.16.0
+      '@oxlint/win32-x64': 0.16.0
 
   react-dom@19.0.0(react@19.0.0):
     dependencies:
