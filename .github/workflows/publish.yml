@@ -71,7 +71,7 @@ jobs:
                   path: crates/swc_ast_viewer/pkg
 
             - name: Release
-              uses: softprops/action-gh-release@69320dbe05506a9a39fc8ae11030b214ec2d1f87
+              uses: softprops/action-gh-release@39ba0b9d81217c984acfad95ddcc7db226387497
               with:
                   files: |
                       crates/swc_ast_viewer/pkg/swc_ast_viewer_bg.wasm
