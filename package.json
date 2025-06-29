@@ -37,7 +37,7 @@
 		"react-resizable-panels": "^2.1.7"
 	},
 	"devDependencies": {
-		"@rsbuild/core": "1.2.16",
+		"@rsbuild/core": "1.4.2",
 		"@rsbuild/plugin-react": "1.1.1",
 		"@types/react": "^19.0.10",
 		"@types/react-dom": "^19.0.4",
