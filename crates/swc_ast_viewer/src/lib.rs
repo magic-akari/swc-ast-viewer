@@ -89,7 +89,7 @@ pub fn ast(input: &str, file_type: Option<File>) -> Result<String, String> {
         .unwrap_or_default();
 
     let cm: Arc<SourceMap> = Default::default();
-    let fm = cm.new_source_file(Arc::new(FileName::Anon), input.into());
+    let fm = cm.new_source_file(Arc::new(FileName::Anon), input.to_string());
     let mut errors: Vec<swc_core::ecma::parser::error::Error> = Default::default();
 
     let ast = try_with_handler(cm, Default::default(), |handler| {
