@@ -47,8 +47,23 @@ export const Input: React.FC<IProps> = (props) => {
 					placeholder="<input>"
 					defaultValue={filename}
 					onInput={(e) => onRename(e.currentTarget.value)}
+					list="filename-presets"
 				/>
 			</header>
+			<datalist id="filename-presets">
+				<option value="main.js"></option>
+				<option value="main.ts"></option>
+				<option value="main.jsx"></option>
+				<option value="main.tsx"></option>
+				<option value="main.mjs"></option>
+				<option value="main.cjs"></option>
+				<option value="main.mts"></option>
+				<option value="main.cts"></option>
+				<option value="main.mjsx"></option>
+				<option value="main.cjsx"></option>
+				<option value="main.mtsx"></option>
+				<option value="main.ctsx"></option>
+			</datalist>
 			<Editor
 				defaultValue={defaultValue}
 				path="app.tsx"

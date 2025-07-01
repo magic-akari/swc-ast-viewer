@@ -78,6 +78,7 @@ vscode-split-layout {
 
 vscode-tabs {
 	height: 100%;
+	--vscode-settings-headerBorder: transparent;
 }
 
 .filename {
