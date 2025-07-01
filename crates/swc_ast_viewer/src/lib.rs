@@ -61,7 +61,7 @@ pub fn parse(input: &str, file_name: Option<String>) -> Result<Vec<String>, Stri
     let tokens = lexer.tokens().clone();
 
     let mut parser = Parser::new_from(lexer);
-    
+
     let program = if is_esm {
         parser.parse_module().map(Program::Module)
     } else if is_cjs {
