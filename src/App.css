@@ -1,7 +1,6 @@
 @media (prefers-color-scheme: light) {
 	:root {
 		--foreground-color: #24292e;
-		--background-color: #d0d7de;
 	}
 }
 
@@ -23,48 +22,12 @@ html.dark {
 
 :root {
 	--vscode-sash-hoverBorder: #0969da;
-	--divider-background: var(--background-color);
 	--vscode-settings-headerBorder: #fafbfc;
 }
 
 .app-main {
 	color: var(--foreground-color);
 	background-color: var(--background-color);
-}
-
-.divider {
-	width: var(--vscode-sash-size);
-	height: 100%;
-	position: relative;
-}
-
-.divider {
-	background: var(--divider-background);
-}
-
-.divider:hover {
-	background: var(--vscode-sash-hoverBorder);
-}
-
-.divider::before {
-	content: " ";
-	position: absolute;
-	right: -2px;
-	left: -2px;
-	height: 100%;
-	z-index: 5;
-}
-
-.divider::after {
-	content: " ";
-	position: absolute;
-	right: 0;
-	left: 0;
-	z-index: 5;
-	height: 100%;
-	width: 1px;
-	pointer-events: none;
-	background-color: var(--divider-background);
 }
 
 .loading {
