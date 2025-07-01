@@ -1,5 +1,5 @@
+import { VscodeSplitLayout } from "@vscode-elements/react-elements";
 import { Suspense, useCallback, useState } from "react";
-import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
 import "./App.css";
 import { Init } from "./Init";
 import { Input } from "./Input";
@@ -11,6 +11,7 @@ interface IAppProps {
 }
 export const App: React.FC<IAppProps> = (props) => {
 	const [code, setCode] = useState(props.code);
+	const [filename, rename] = useState("main.mtsx");
 	const [selection, setSelection] = useState({ lo: 0, hi: 0 });
 
 	const onChange = useCallback((value?: string) => {
@@ -23,15 +24,20 @@ export const App: React.FC<IAppProps> = (props) => {
 	return (
 		<Suspense fallback={"Loading..."}>
 			<Init />
-			<PanelGroup direction="horizontal" className="app-main">
-				<Panel defaultSize={50} minSize={33} maxSize={66}>
-					<Input onSelect={setSelection} defaultValue={props.code} onChange={onChange} />
-				</Panel>
-				<PanelResizeHandle className="divider" />
-				<Panel>
-					<Output code={code} selection={selection} />
-				</Panel>
-			</PanelGroup>
+			<VscodeSplitLayout className="app-main">
+				<div className="split-panel" slot="start">
+					<Input
+						defaultValue={props.code}
+						filename={filename}
+						onChange={onChange}
+						onRename={rename}
+						onSelect={setSelection}
+					/>
+				</div>
+				<div className="split-panel" slot="end">
+					<Output code={code} selection={selection} filename={filename} />
+				</div>
+			</VscodeSplitLayout>
 		</Suspense>
 	);
 };

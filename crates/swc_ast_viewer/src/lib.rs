@@ -1,127 +1,97 @@
 use anyhow::Result;
-use std::{str::FromStr, sync::Arc};
+use std::sync::Arc;
 use swc_core::{
     self,
-    common::{errors::HANDLER, FileName, Globals, Mark, SourceFile, SourceMap, GLOBALS},
-    ecma::{
-        ast::*,
-        parser::{
-            error::Error as SWCError, parse_file_as_program, EsSyntax, PResult, Syntax, TsSyntax,
-        },
-        transforms::base::resolver,
-        visit::VisitMutWith,
-    },
+    common::{FileName, Globals, Mark, SourceMap, GLOBALS},
+    ecma::{ast::*, transforms::base::resolver, visit::VisitMutWith},
 };
-use swc_error_reporters::handler::try_with_handler;
+use swc_ecma_parser::{
+    self, unstable::Capturing, EsSyntax, Lexer, Parser, StringInput, Syntax, TsSyntax,
+};
+
 use wasm_bindgen::prelude::wasm_bindgen;
 
-fn typescript(fm: &SourceFile, errors: &mut Vec<SWCError>, tsx: bool) -> PResult<Program> {
-    parse_file_as_program(
-        fm,
-        Syntax::Typescript(TsSyntax {
-            tsx,
-            decorators: true,
-            ..Default::default()
-        }),
-        EsVersion::EsNext,
-        None,
-        errors,
-    )
-}
-
-fn javascript(fm: &SourceFile, errors: &mut Vec<SWCError>, jsx: bool) -> PResult<Program> {
-    parse_file_as_program(
-        fm,
-        Syntax::Es(EsSyntax {
-            jsx,
-            decorators: true,
-            ..Default::default()
-        }),
-        EsVersion::EsNext,
-        None,
-        errors,
-    )
-}
-
-#[wasm_bindgen(typescript_custom_section)]
-const TS_FileType: &'static str = r#"type FileType = "js" | "jsx" | "ts" | "tsx";"#;
-
-#[derive(Default, PartialEq)]
-enum FileType {
-    JavaScript,
-    JavaScriptReact,
-    TypeScript,
-    #[default]
-    TypeScriptReact,
-}
-
-impl FileType {
-    fn is_ts(&self) -> bool {
-        self == &Self::TypeScript || self == &Self::TypeScriptReact
-    }
-}
-
-impl FromStr for FileType {
-    type Err = anyhow::Error;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        match s {
-            "js" => Ok(Self::JavaScript),
-            "jsx" => Ok(Self::JavaScriptReact),
-            "ts" => Ok(Self::TypeScript),
-            "tsx" => Ok(Self::TypeScriptReact),
-            _ => Err(anyhow::anyhow!("Invalid file type: {}", s)),
-        }
-    }
-}
+static FILE_NAME: &str = "main.mtsx";
 
 #[wasm_bindgen]
-extern "C" {
-    #[wasm_bindgen(typescript_type = "FileType")]
-    pub type File;
-}
+pub fn parse(input: &str, file_name: Option<String>) -> Result<Vec<String>, String> {
+    let file_name = file_name.unwrap_or_else(|| FILE_NAME.to_string());
+    let mut iter = file_name.rsplit('.');
+    let ext = iter.next();
 
-#[wasm_bindgen]
-pub fn ast(input: &str, file_type: Option<File>) -> Result<String, String> {
-    let file_type: FileType = file_type
-        .and_then(|file_type| file_type.as_string())
-        .and_then(|s| s.parse().ok())
+    let is_jsx = ext
+        .map(|e| {
+            e == "jsx" || e == "tsx" || e == "mjsx" || e == "cjsx" || e == "mtsx" || e == "ctsx"
+        })
         .unwrap_or_default();
+
+    let is_esm = ext
+        .map(|e| e == "mjs" || e == "mts" || e == "mjsx" || e == "mtsx")
+        .unwrap_or_default();
+
+    let is_cjs = ext
+        .map(|e| e == "cjs" || e == "cts" || e == "cjsx" || e == "ctsx")
+        .unwrap_or_default();
+
+    let is_ts = ext
+        .map(|e| e == "ts" || e == "tsx" || e == "mts" || e == "cts" || e == "mtsx" || e == "ctsx")
+        .unwrap_or_default();
+
+    let is_d_ts = ext == Some("ts") && (iter.next() == Some("d") || iter.next() == Some("d"));
 
     let cm: Arc<SourceMap> = Default::default();
     let fm = cm.new_source_file(Arc::new(FileName::Anon), input.to_string());
-    let mut errors: Vec<swc_core::ecma::parser::error::Error> = Default::default();
 
-    let ast = try_with_handler(cm, Default::default(), |handler| {
-        GLOBALS.set(&Globals::default(), || {
-            HANDLER.set(handler, || {
-                let unresolved_mark = Mark::new();
-                let top_level_mark = Mark::new();
-
-                let mut program = match file_type {
-                    FileType::JavaScript => javascript(&fm, &mut errors, false),
-                    FileType::JavaScriptReact => javascript(&fm, &mut errors, true),
-                    FileType::TypeScript => typescript(&fm, &mut errors, false),
-                    FileType::TypeScriptReact => typescript(&fm, &mut errors, true),
-                }
-                .map_err(|err| anyhow::anyhow!("{err:?}"))?;
-
-                program.visit_mut_with(&mut resolver(
-                    unresolved_mark,
-                    top_level_mark,
-                    file_type.is_ts(),
-                ));
-                Ok(program)
-            })
+    let syntax = if is_ts {
+        Syntax::Typescript(TsSyntax {
+            tsx: is_jsx,
+            dts: is_d_ts,
+            ..Default::default()
         })
-    })
-    .map_err(|err| format!("{err:?}"))?;
+    } else {
+        Syntax::Es(EsSyntax {
+            jsx: is_jsx,
+            ..Default::default()
+        })
+    };
+    let target = EsVersion::latest();
+
+    let lexer = Capturing::new(Lexer::new(syntax, target, StringInput::from(&*fm), None));
+    let tokens = lexer.tokens().clone();
+
+    let mut parser = Parser::new_from(lexer);
+
+    let program = if is_esm {
+        parser.parse_module().map(Program::Module)
+    } else if is_cjs {
+        parser.parse_commonjs().map(Program::Script)
+    } else {
+        parser.parse_program()
+    };
+
+    let mut errors = parser.take_errors();
+
+    let mut ast = match program {
+        Ok(program) => program,
+        Err(e) => {
+            errors.push(e);
+            return Err(format!("{errors:?}"));
+        }
+    };
 
     if !errors.is_empty() {
         return Err(format!("{errors:?}"));
     }
 
-    Ok(format!("{ast:#?}"))
+    let tokens = tokens.take();
+
+    GLOBALS.set(&Globals::default(), || {
+        let unresolved_mark = Mark::new();
+        let top_level_mark = Mark::new();
+        ast.visit_mut_with(&mut resolver(unresolved_mark, top_level_mark, is_ts));
+
+        Ok(vec![format!("{ast:#?}"), format!("{tokens:#?}")])
+    })
 }
 
 #[wasm_bindgen]

@@ -1,12 +1,14 @@
 @media (prefers-color-scheme: light) {
 	:root {
+		--foreground-color: #24292e;
 		--background-color: #d0d7de;
 	}
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--background-color: #30363d;
+		--foreground-color: #f6f8fa;
+		--background-color: #24292e;
 	}
 }
 
@@ -22,9 +24,11 @@ html.dark {
 :root {
 	--vscode-sash-hoverBorder: #0969da;
 	--divider-background: var(--background-color);
+	--vscode-settings-headerBorder: #fafbfc;
 }
 
 .app-main {
+	color: var(--foreground-color);
 	background-color: var(--background-color);
 }
 
@@ -66,4 +70,27 @@ html.dark {
 .loading {
 	height: 100%;
 	margin: auto;
+}
+
+vscode-split-layout {
+	height: 100%;
+}
+
+vscode-tabs {
+	height: 100%;
+}
+
+.filename {
+	flex: 1;
+	width: 100%;
+	appearance: none;
+	background: transparent;
+	border: none;
+	padding: 0 24px;
+	color: inherit;
+	outline: none;
+	box-sizing: border-box;
+	height: 35px;
+	display: flex;
+	font-size: 14px;
 }

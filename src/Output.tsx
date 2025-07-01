@@ -1,17 +1,35 @@
-import { ast } from "#swc_ast_viewer";
+import { parse } from "#swc_ast_viewer";
 import Editor, { type OnMount } from "@monaco-editor/react";
+import { VscodeTabHeader, VscodeTabs } from "@vscode-elements/react-elements";
 import type { editor } from "monaco-editor";
-import { useCallback, useEffect, useMemo, useRef } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { parse_swc_ast, type Span } from "./swc-ast-parser";
 
 type IProps = {
 	code: string;
+	filename: string;
 	selection: Span;
 };
 
 export const Output: React.FC<IProps> = (props) => {
-	const { selection, code } = props;
-	const [value, language] = getAST(code);
+	const { code, filename, selection } = props;
+	const [viewMode, setViewMode] = useState<0 | 1>(0);
+
+	const result = useMemo(() => {
+		return getResult(code, filename);
+	}, [code, filename]);
+
+	const [value, language] = useMemo(() => {
+		if (result.type === "error") {
+			return [result.message, "error"] as const;
+		}
+
+		return [
+			viewMode === 0 ? result.ast : result.tokens,
+			"swc-ast",
+		] as const;
+	}, [result, viewMode]);
+
 	const ref = useRef<editor.IStandaloneCodeEditor>(null!);
 
 	const onMount = useCallback<OnMount>((editor) => {
@@ -19,7 +37,7 @@ export const Output: React.FC<IProps> = (props) => {
 	}, []);
 
 	const section_list = useMemo(() => {
-		if (language !== "swc-ast") {
+		if (language === "error") {
 			return [];
 		}
 		return parse_swc_ast(value);
@@ -30,13 +48,18 @@ export const Output: React.FC<IProps> = (props) => {
 			return;
 		}
 
-		if (language !== "swc-ast") {
+		if (language === "error") {
 			return;
 		}
 
-		const section = section_list.filter((section) => {
-			return section.span.lo <= selection.lo && selection.hi <= section.span.hi;
-		}).sort((a, b) => b.level - a.level)[0];
+		const section = section_list
+			.filter((section) => {
+				return (
+					section.span.lo <= selection.lo
+					&& selection.hi <= section.span.hi
+				);
+			})
+			.sort((a, b) => b.level - a.level)[0];
 
 		if (section) {
 			ref.current.setSelection(section.range);
@@ -45,20 +68,40 @@ export const Output: React.FC<IProps> = (props) => {
 	}, [language, selection, section_list]);
 
 	return (
-		<Editor
-			path="output"
-			onMount={onMount}
-			language={language}
-			value={value}
-			options={{ readOnly: true }}
-		/>
+		<VscodeTabs
+			onVscTabsSelect={(e) => setViewMode(e.detail.selectedIndex as 0 | 1)}
+		>
+			<VscodeTabHeader slot="header">AST</VscodeTabHeader>
+			<VscodeTabHeader slot="header">Token</VscodeTabHeader>
+			<Editor
+				path={"output" + [".ast", ".token"][viewMode]}
+				onMount={onMount}
+				language={language}
+				value={value}
+				options={{ readOnly: true }}
+			/>
+		</VscodeTabs>
 	);
 };
 
-function getAST(code: string): [code: string, language: string] {
+function getResult(
+	code: string,
+	path: string,
+):
+	| { type: "error"; message: string }
+	| { type: "result"; ast: string; tokens: string }
+{
 	try {
-		return [ast(code), "swc-ast"];
+		const [ast, tokens] = parse(code, path);
+		return {
+			type: "result",
+			ast,
+			tokens,
+		};
 	} catch (error) {
-		return [error as string, "error"];
+		return {
+			type: "error",
+			message: error as string,
+		};
 	}
 }
