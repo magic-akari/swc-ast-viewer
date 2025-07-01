@@ -2,12 +2,13 @@ use anyhow::Result;
 use std::sync::Arc;
 use swc_core::{
     self,
-    common::{FileName, Globals, Mark, SourceMap, GLOBALS},
+    common::{errors::ColorConfig, FileName, Globals, Mark, SourceMap, GLOBALS},
     ecma::{ast::*, transforms::base::resolver, visit::VisitMutWith},
 };
 use swc_ecma_parser::{
     self, unstable::Capturing, EsSyntax, Lexer, Parser, StringInput, Syntax, TsSyntax,
 };
+use swc_error_reporters::handler::{try_with_handler, HandlerOpts};
 
 use wasm_bindgen::prelude::wasm_bindgen;
 
@@ -60,7 +61,7 @@ pub fn parse(input: &str, file_name: Option<String>) -> Result<Vec<String>, Stri
     let tokens = lexer.tokens().clone();
 
     let mut parser = Parser::new_from(lexer);
-
+    
     let program = if is_esm {
         parser.parse_module().map(Program::Module)
     } else if is_cjs {
@@ -69,19 +70,24 @@ pub fn parse(input: &str, file_name: Option<String>) -> Result<Vec<String>, Stri
         parser.parse_program()
     };
 
-    let mut errors = parser.take_errors();
+    let mut ast = try_with_handler(
+        cm,
+        HandlerOpts {
+            color: ColorConfig::Never,
+            ..Default::default()
+        },
+        |handler| {
+            for err in parser.take_errors() {
+                err.into_diagnostic(handler).emit();
+            }
 
-    let mut ast = match program {
-        Ok(program) => program,
-        Err(e) => {
-            errors.push(e);
-            return Err(format!("{errors:?}"));
-        }
-    };
-
-    if !errors.is_empty() {
-        return Err(format!("{errors:?}"));
-    }
+            program.map_err(|err| {
+                err.into_diagnostic(handler).emit();
+                anyhow::anyhow!("Failed to parse the input")
+            })
+        },
+    )
+    .map_err(|err| err.to_pretty_string())?;
 
     let tokens = tokens.take();
 
