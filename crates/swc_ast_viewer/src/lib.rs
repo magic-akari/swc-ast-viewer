@@ -6,7 +6,8 @@ use swc_core::{
     ecma::{
         ast::*,
         parser::{unstable::Capturing, EsSyntax, Lexer, Parser, StringInput, Syntax, TsSyntax},
-        transforms::base::resolver, visit::VisitMutWith,
+        transforms::base::resolver,
+        visit::VisitMutWith,
     },
 };
 use swc_error_reporters::handler::{try_with_handler, HandlerOpts};
