@@ -16,8 +16,7 @@ resolver = "2"
 
 
     [workspace.dependencies]
-    swc_core            = { version = "29.4.0", default-features = false }
-    swc_ecma_parser     = { version = "17.2.1", default-features = false }
+    swc_core            = { version = "30.0.1", default-features = false }
     swc_error_reporters = "15.0.0"
 
 

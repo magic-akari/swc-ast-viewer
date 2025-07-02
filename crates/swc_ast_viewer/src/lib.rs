@@ -3,10 +3,11 @@ use std::sync::Arc;
 use swc_core::{
     self,
     common::{errors::ColorConfig, FileName, Globals, Mark, SourceMap, GLOBALS},
-    ecma::{ast::*, transforms::base::resolver, visit::VisitMutWith},
-};
-use swc_ecma_parser::{
-    self, unstable::Capturing, EsSyntax, Lexer, Parser, StringInput, Syntax, TsSyntax,
+    ecma::{
+        ast::*,
+        parser::{unstable::Capturing, EsSyntax, Lexer, Parser, StringInput, Syntax, TsSyntax},
+        transforms::base::resolver, visit::VisitMutWith,
+    },
 };
 use swc_error_reporters::handler::{try_with_handler, HandlerOpts};
 

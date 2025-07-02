@@ -17,13 +17,14 @@ anyhow       = "1.0.97"
 wasm-bindgen = "0.2.100"
 
     [dependencies.swc_core]
-    features  = ["ecma_ast", "common", "ecma_visit", "ecma_transforms"]
+    features = [
+        "ecma_ast",
+        "common",
+        "ecma_visit",
+        "ecma_transforms",
+        "ecma_parser_unstable",
+    ]
     workspace = true
-
-    [dependencies.swc_ecma_parser]
-    features  = ["unstable"]
-    workspace = true
-
 
     [dependencies.swc_error_reporters]
     workspace = true
