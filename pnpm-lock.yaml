@@ -24,7 +24,7 @@ importers:
         version: 1.15.1(@types/react@19.0.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@wasm-fmt/biome_fmt':
         specifier: ^0.1.13
-        version: 0.1.13
+        version: 0.1.14
       lz-string:
         specifier: ^1.5.0
         version: 1.5.0
@@ -319,8 +319,8 @@ packages:
   '@vscode-elements/webview-playground@1.8.0':
     resolution: {integrity: sha512-KHkrS384THknRdvlEr+2khSFe3E9pfRo7pLwuVQxZFoVspQb+QkXN3BmuqhWuxkcn85DJ4afkJHJ6jsYa8Mt4Q==}
 
-  '@wasm-fmt/biome_fmt@0.1.13':
-    resolution: {integrity: sha512-leV/pkSxMtsUUrOwnx/K02kkE06uxrq57ePYHn2S6vLYJkOrogV10d6RnLmu9bh3GnfXfosBkgzYXTE012kQUg==}
+  '@wasm-fmt/biome_fmt@0.1.14':
+    resolution: {integrity: sha512-9kAuoQYfwcgDAGYbhxnCxrMyaZAbEIZfZoA22ZFPBYjFu20zXqEDOTJ9BognABxN/hKvtcz23rpLdEebUlRKkQ==}
 
   core-js@3.43.0:
     resolution: {integrity: sha512-N6wEbTTZSYOY2rYAn85CuvWWkCK6QweMn7/4Nr3w+gDBeBhk/x4EJeY6FPo4QzDoJZxVTv8U7CMvgWk6pOHHqA==}
@@ -630,7 +630,7 @@ snapshots:
 
   '@vscode-elements/webview-playground@1.8.0': {}
 
-  '@wasm-fmt/biome_fmt@0.1.13': {}
+  '@wasm-fmt/biome_fmt@0.1.14': {}
 
   core-js@3.43.0: {}
 
