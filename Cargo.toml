@@ -16,7 +16,7 @@ resolver = "2"
 
 
     [workspace.dependencies]
-    swc_core            = { version = "30.0.1", default-features = false }
+    swc_core            = { version = "31.0.0", default-features = false }
     swc_error_reporters = "15.0.0"
 
 
