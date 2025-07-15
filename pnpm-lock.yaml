@@ -49,7 +49,7 @@ importers:
         version: 19.1.6(@types/react@19.1.8)
       '@vscode-elements/webview-playground':
         specifier: ^1.8.0
-        version: 1.8.0
+        version: 1.9.0
       dprint:
         specifier: ^0.50.1
         version: 0.50.1
@@ -314,8 +314,8 @@ packages:
       react: 17 || 18 || 19
       react-dom: 17 || 18 || 19
 
-  '@vscode-elements/webview-playground@1.8.0':
-    resolution: {integrity: sha512-KHkrS384THknRdvlEr+2khSFe3E9pfRo7pLwuVQxZFoVspQb+QkXN3BmuqhWuxkcn85DJ4afkJHJ6jsYa8Mt4Q==}
+  '@vscode-elements/webview-playground@1.9.0':
+    resolution: {integrity: sha512-0VMzdeLisbmACMXSyNhtkgca/wLmBMrVq4T0T8MGzPhLg9uDcgEaCscTdVaNg2tPwfCtmSN2BU8KGTEH1iqdhA==}
 
   '@wasm-fmt/biome_fmt@0.1.14':
     resolution: {integrity: sha512-9kAuoQYfwcgDAGYbhxnCxrMyaZAbEIZfZoA22ZFPBYjFu20zXqEDOTJ9BognABxN/hKvtcz23rpLdEebUlRKkQ==}
@@ -625,7 +625,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@vscode-elements/webview-playground@1.8.0': {}
+  '@vscode-elements/webview-playground@1.9.0': {}
 
   '@wasm-fmt/biome_fmt@0.1.14': {}
 
