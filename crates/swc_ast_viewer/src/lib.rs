@@ -60,7 +60,6 @@ pub fn parse(input: &str, file_name: Option<String>) -> Result<Vec<String>, Stri
     let target = EsVersion::latest();
 
     let lexer = Capturing::new(Lexer::new(syntax, target, StringInput::from(&*fm), None));
-    let tokens = lexer.tokens().clone();
 
     let mut parser = Parser::new_from(lexer);
 
@@ -91,7 +90,7 @@ pub fn parse(input: &str, file_name: Option<String>) -> Result<Vec<String>, Stri
     )
     .map_err(|err| err.to_pretty_string())?;
 
-    let tokens = tokens.take();
+    let tokens = parser.input_mut().iter_mut().take();
 
     GLOBALS.set(&Globals::default(), || {
         let unresolved_mark = Mark::new();
