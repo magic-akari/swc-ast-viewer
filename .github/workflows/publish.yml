@@ -47,7 +47,7 @@ jobs:
                   node-version-file: ".node-version"
                   registry-url: "https://registry.npmjs.org"
 
-            - uses: actions/download-artifact@v4
+            - uses: actions/download-artifact@v6
               with:
                   name: build
                   path: crates/swc_ast_viewer/pkg
@@ -65,7 +65,7 @@ jobs:
             contents: write
         steps:
             - uses: actions/checkout@v4
-            - uses: actions/download-artifact@v4
+            - uses: actions/download-artifact@v6
               with:
                   name: build
                   path: crates/swc_ast_viewer/pkg
