@@ -39,7 +39,7 @@ jobs:
         working-directory: crates/swc_ast_viewer/pkg
 
       - name: Upload
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: build
           path: crates/swc_ast_viewer/pkg
