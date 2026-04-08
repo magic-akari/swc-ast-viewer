@@ -18,10 +18,10 @@ importers:
         version: 1.5.0
       '@monaco-editor/react':
         specifier: 4.6.0
-        version: 4.6.0(patch_hash=e4dbd59d47303e027860614b4717cf30afd6bfa7f254baf6aa0e4c27f6b87829)(monaco-editor@0.54.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        version: 4.6.0(patch_hash=e4dbd59d47303e027860614b4717cf30afd6bfa7f254baf6aa0e4c27f6b87829)(monaco-editor@0.54.0)(react-dom@19.2.0(react@19.2.5))(react@19.2.5)
       '@vscode-elements/react-elements':
         specifier: ^1.15.1
-        version: 1.15.1(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        version: 1.15.1(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.5))(react@19.2.5)
       '@wasm-fmt/biome_fmt':
         specifier: ^0.1.14
         version: 0.1.14
@@ -29,11 +29,11 @@ importers:
         specifier: ^1.5.0
         version: 1.5.0
       react:
-        specifier: 19.2.0
-        version: 19.2.0
+        specifier: 19.2.5
+        version: 19.2.5
       react-dom:
         specifier: 19.2.0
-        version: 19.2.0(react@19.2.0)
+        version: 19.2.0(react@19.2.5)
     devDependencies:
       '@rsbuild/core':
         specifier: 1.6.0
@@ -386,8 +386,8 @@ packages:
     resolution: {integrity: sha512-QgT5//D3jfjJb6Gsjxv0Slpj23ip+HtOpnNgnb2S5zU3CB26G/IDPGoy4RJB42wzFE46DRsstbW6tKHoKbhAxw==}
     engines: {node: '>=0.10.0'}
 
-  react@19.2.0:
-    resolution: {integrity: sha512-tmbWg6W31tQLeB5cdIBOicJDJRR2KzXsV7uSK9iNfLWQ5bIZfxuPEHp7M8wiHyHnn0DD1i7w3Zmin0FtkrwoCQ==}
+  react@19.2.5:
+    resolution: {integrity: sha512-llUJLzz1zTUBrskt2pwZgLq59AemifIftw4aB7JxOqf1HY2FDaGDxgwpAPVzHU1kdWabH7FauP4i1oEeer2WCA==}
     engines: {node: '>=0.10.0'}
 
   scheduler@0.27.0:
@@ -491,12 +491,12 @@ snapshots:
     dependencies:
       state-local: 1.0.7
 
-  '@monaco-editor/react@4.6.0(patch_hash=e4dbd59d47303e027860614b4717cf30afd6bfa7f254baf6aa0e4c27f6b87829)(monaco-editor@0.54.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+  '@monaco-editor/react@4.6.0(patch_hash=e4dbd59d47303e027860614b4717cf30afd6bfa7f254baf6aa0e4c27f6b87829)(monaco-editor@0.54.0)(react-dom@19.2.0(react@19.2.5))(react@19.2.5)':
     dependencies:
       '@monaco-editor/loader': 1.5.0
       monaco-editor: 0.54.0
-      react: 19.2.0
-      react-dom: 19.2.0(react@19.2.0)
+      react: 19.2.5
+      react-dom: 19.2.0(react@19.2.5)
 
   '@napi-rs/wasm-runtime@1.0.7':
     dependencies:
@@ -629,12 +629,12 @@ snapshots:
     dependencies:
       lit: 3.3.0
 
-  '@vscode-elements/react-elements@1.15.1(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+  '@vscode-elements/react-elements@1.15.1(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.5))(react@19.2.5)':
     dependencies:
       '@lit/react': 1.0.7(@types/react@19.2.2)
       '@vscode-elements/elements': 1.17.0
-      react: 19.2.0
-      react-dom: 19.2.0(react@19.2.0)
+      react: 19.2.5
+      react-dom: 19.2.0(react@19.2.5)
     transitivePeerDependencies:
       - '@types/react'
 
@@ -706,14 +706,14 @@ snapshots:
       '@oxlint/win32-arm64': 1.25.0
       '@oxlint/win32-x64': 1.25.0
 
-  react-dom@19.2.0(react@19.2.0):
+  react-dom@19.2.0(react@19.2.5):
     dependencies:
-      react: 19.2.0
+      react: 19.2.5
       scheduler: 0.27.0
 
   react-refresh@0.18.0: {}
 
-  react@19.2.0: {}
+  react@19.2.5: {}
 
   scheduler@0.27.0: {}
 
