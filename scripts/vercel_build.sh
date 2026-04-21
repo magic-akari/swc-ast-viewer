@@ -1,5 +1,3 @@
-source "$HOME/.cargo/env"
-
 corepack enable
 
 echo "Building WASM..."
