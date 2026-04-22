@@ -27,7 +27,7 @@
 		"#swc_ast_viewer/*": "./crates/swc_ast_viewer/pkg/*"
 	},
 	"dependencies": {
-		"@monaco-editor/loader": "1.5.0",
+		"@monaco-editor/loader": "1.7.0",
 		"@monaco-editor/react": "4.6.0",
 		"@vscode-elements/react-elements": "^1.15.1",
 		"@wasm-fmt/biome_fmt": "^0.2.9",
