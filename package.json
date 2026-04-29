@@ -34,7 +34,7 @@
 		"@wasm-fmt/biome_fmt": "^0.2.9",
 		"lz-string": "^1.5.0",
 		"react": "19.2.0",
-		"react-dom": "19.2.0"
+		"react-dom": "19.2.5"
 	},
 	"devDependencies": {
 		"@rsbuild/core": "2.0.0",
