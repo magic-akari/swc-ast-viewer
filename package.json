@@ -42,7 +42,7 @@
 		"@types/react": "^19.2.2",
 		"@types/react-dom": "^19.2.2",
 		"@vscode-elements/webview-playground": "^1.9.0",
-		"dprint": "^0.50.2",
+		"dprint": "^0.54.0",
 		"gen_dep_tag": "^0.0.3",
 		"monaco-editor": "^0.54.0",
 		"oxlint": "^1.61.0",
