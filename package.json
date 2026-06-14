@@ -44,7 +44,7 @@
 		"@vscode-elements/webview-playground": "^1.9.0",
 		"dprint": "^0.54.0",
 		"gen_dep_tag": "^0.0.3",
-		"monaco-editor": "^0.54.0",
+		"monaco-editor": "^0.55.0",
 		"oxlint": "^1.69.0",
 		"typescript": "^6.0.3"
 	},
