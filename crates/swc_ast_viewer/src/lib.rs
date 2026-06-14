@@ -2,15 +2,15 @@ use anyhow::Result;
 use std::sync::Arc;
 use swc_core::{
     self,
-    common::{errors::ColorConfig, FileName, Globals, Mark, SourceMap, GLOBALS},
+    common::{FileName, GLOBALS, Globals, Mark, SourceMap, errors::ColorConfig},
     ecma::{
         ast::*,
-        parser::{unstable::Capturing, EsSyntax, Lexer, Parser, StringInput, Syntax, TsSyntax},
+        parser::{EsSyntax, Lexer, Parser, StringInput, Syntax, TsSyntax, unstable::Capturing},
         transforms::base::resolver,
         visit::VisitMutWith,
     },
 };
-use swc_error_reporters::handler::{try_with_handler, HandlerOpts};
+use swc_error_reporters::handler::{HandlerOpts, try_with_handler};
 
 use wasm_bindgen::prelude::wasm_bindgen;
 
@@ -22,23 +22,17 @@ pub fn parse(input: &str, file_name: Option<String>) -> Result<Vec<String>, Stri
     let mut iter = file_name.rsplit('.');
     let ext = iter.next();
 
-    let is_jsx = ext
-        .map(|e| {
-            e == "jsx" || e == "tsx" || e == "mjsx" || e == "cjsx" || e == "mtsx" || e == "ctsx"
-        })
-        .unwrap_or_default();
+    let is_jsx = ext.is_some_and(|e| {
+        e == "jsx" || e == "tsx" || e == "mjsx" || e == "cjsx" || e == "mtsx" || e == "ctsx"
+    });
 
-    let is_esm = ext
-        .map(|e| e == "mjs" || e == "mts" || e == "mjsx" || e == "mtsx")
-        .unwrap_or_default();
+    let is_esm = ext.is_some_and(|e| e == "mjs" || e == "mts" || e == "mjsx" || e == "mtsx");
 
-    let is_cjs = ext
-        .map(|e| e == "cjs" || e == "cts" || e == "cjsx" || e == "ctsx")
-        .unwrap_or_default();
+    let is_cjs = ext.is_some_and(|e| e == "cjs" || e == "cts" || e == "cjsx" || e == "ctsx");
 
-    let is_ts = ext
-        .map(|e| e == "ts" || e == "tsx" || e == "mts" || e == "cts" || e == "mtsx" || e == "ctsx")
-        .unwrap_or_default();
+    let is_ts = ext.is_some_and(|e| {
+        e == "ts" || e == "tsx" || e == "mts" || e == "cts" || e == "mtsx" || e == "ctsx"
+    });
 
     let is_d_ts = ext == Some("ts") && (iter.next() == Some("d") || iter.next() == Some("d"));
 
@@ -88,7 +82,7 @@ pub fn parse(input: &str, file_name: Option<String>) -> Result<Vec<String>, Stri
             })
         },
     )
-    .map_err(|err| err.to_pretty_string())?;
+    .map_err(swc_error_reporters::TWithDiagnosticArray::to_pretty_string)?;
 
     let tokens = parser.input_mut().iter_mut().take();
 
@@ -102,6 +96,7 @@ pub fn parse(input: &str, file_name: Option<String>) -> Result<Vec<String>, Stri
 }
 
 #[wasm_bindgen]
+#[must_use]
 pub fn version() -> String {
     swc_core::SWC_CORE_VERSION.into()
 }

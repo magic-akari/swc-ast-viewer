@@ -6,7 +6,7 @@ resolver = "2"
     [workspace.package]
     authors     = ["magic-akari <akari.ccino@gmail.com>"]
     description = "SWC AST Viewer"
-    edition     = "2021"
+    edition     = "2024"
     homepage    = "https://github.com/magic-akari/swc-ast-viewer"
     keywords    = []
     license     = "MIT"
@@ -16,8 +16,8 @@ resolver = "2"
 
 
     [workspace.dependencies]
-    swc_core            = { version = "64.0.0", default-features = false }
-    swc_error_reporters = "23.0.0"
+    swc_core            = { version = "68.0.6", default-features = false }
+    swc_error_reporters = "25.0.0"
 
 
 [profile.release]
